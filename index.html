@@ -79,11 +79,24 @@
   <script type="text/babel">
     const { useState, useRef, useEffect, useMemo } = React;
 
+    function TooltipBubble({ text, show }) {
+      if (!show) return null;
+      return (
+        <div
+          className="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] bg-white/90 px-2 py-0.5 rounded-full border border-stone-200 shadow text-stone-600 whitespace-nowrap pointer-events-none"
+        >
+          {text}
+        </div>
+      );
+    }
+
+
     // ============ PETAL COMPONENTS ============
-    function HeartPetal({ color, colorLight, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function HeartPetal({color, colorLight, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap for a surprise'} show={isMobile || hovered} />
           <svg viewBox="0 0 60 66" style={{ width: size, height: size * 1.1, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><radialGradient id={`hg-${color.replace('#', '')}`} cx="50%" cy="80%" r="70%"><stop offset="0%" stopColor={colorLight} /><stop offset="100%" stopColor={color} /></radialGradient></defs>
             <path d="M30 62 Q20 58 12 48 Q4 38 4 28 Q4 18 12 12 Q20 6 30 10 Q40 6 48 12 Q56 18 56 28 Q56 38 48 48 Q40 58 30 62Z" fill={`url(#hg-${color.replace('#', '')})`} />
@@ -92,10 +105,11 @@
       );
     }
 
-    function PointedPetal({ color, colorLight, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function PointedPetal({color, colorLight, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap for a surprise'} show={isMobile || hovered} />
           <svg viewBox="0 0 42 96" style={{ width: size * 0.7, height: size * 1.6, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><linearGradient id={`pg-${color.replace('#', '')}`} x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="0%" stopColor={colorLight} /><stop offset="60%" stopColor={color} /></linearGradient></defs>
             <path d="M21 2 Q28 15 34 30 Q40 45 40 60 Q40 75 34 84 Q28 92 21 94 Q14 92 8 84 Q2 75 2 60 Q2 45 8 30 Q14 15 21 2Z" fill={`url(#pg-${color.replace('#', '')})`} />
@@ -104,10 +118,11 @@
       );
     }
 
-    function RoundPetal({ color, colorLight, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function RoundPetal({color, colorLight, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap for a surprise'} show={isMobile || hovered} />
           <svg viewBox="0 0 60 63" style={{ width: size, height: size * 1.05, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><radialGradient id={`rg-${color.replace('#', '')}`} cx="50%" cy="90%" r="80%"><stop offset="0%" stopColor={colorLight} /><stop offset="100%" stopColor={color} /></radialGradient></defs>
             <path d="M30 60 Q18 58 10 48 Q2 38 2 28 Q2 14 16 6 Q30 0 44 6 Q58 14 58 28 Q58 38 50 48 Q42 58 30 60Z" fill={`url(#rg-${color.replace('#', '')})`} />
@@ -116,10 +131,11 @@
       );
     }
 
-    function SmallPetal({ color, colorLight, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function SmallPetal({color, colorLight, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap for a surprise'} show={isMobile || hovered} />
           <svg viewBox="0 0 36 60" style={{ width: size * 0.6, height: size, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><radialGradient id={`sg-${color.replace('#', '')}-${size}`} cx="50%" cy="70%" r="60%"><stop offset="0%" stopColor={colorLight} /><stop offset="100%" stopColor={color} /></radialGradient></defs>
             <path d="M18 56 Q8 50 4 38 Q0 26 6 14 Q12 4 18 2 Q24 4 30 14 Q36 26 32 38 Q28 50 18 56Z" fill={`url(#sg-${color.replace('#', '')}-${size})`} />
@@ -128,10 +144,11 @@
       );
     }
 
-    function Leaf({ color, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function Leaf({color, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap to rotate'} show={isMobile || hovered} />
           <svg viewBox="0 0 100 45" style={{ width: size, height: size * 0.45, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><linearGradient id={`lg-${size}`} x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stopColor="#1B8A4E" /><stop offset="50%" stopColor={color} /><stop offset="100%" stopColor="#1B8A4E" /></linearGradient></defs>
             <path d="M2 22 Q15 8 30 5 Q50 2 70 5 Q85 8 98 22 Q85 36 70 40 Q50 43 30 40 Q15 36 2 22Z" fill={`url(#lg-${size})`} />
@@ -141,10 +158,11 @@
       );
     }
 
-    function RoundLeaf({ color, size, rotation, style, onMouseDown, onDoubleClick }) {
+    function RoundLeaf({color, size, rotation, style, onMouseDown, onTouchStart, onDoubleClick, isMobile, tooltipText}) {
       const [hovered, setHovered] = useState(false);
       return (
-        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onDoubleClick={onDoubleClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="absolute select-none touch-none">
+        <div style={{ ...style, transition: 'transform 0.3s ease' }} onMouseDown={onMouseDown} onTouchStart={onTouchStart} onDoubleClick={onDoubleClick} onMouseEnter={() => { if (!isMobile) setHovered(true); }} onMouseLeave={() => { if (!isMobile) setHovered(false); }} className="absolute select-none touch-none">
+          <TooltipBubble text={tooltipText || 'double tap to rotate'} show={isMobile || hovered} />
           <svg viewBox="0 0 70 49" style={{ width: size, height: size * 0.7, transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', animation: hovered ? 'wiggle 0.4s ease-in-out' : 'none' }}>
             <defs><radialGradient id={`rlg-${size}`} cx="50%" cy="50%" r="60%"><stop offset="0%" stopColor={color} /><stop offset="100%" stopColor="#1B8A4E" /></radialGradient></defs>
             <path d="M4 24 Q4 10 20 5 Q35 2 50 5 Q66 10 66 24 Q66 38 50 44 Q35 47 20 44 Q4 38 4 24Z" fill={`url(#rlg-${size})`} />
@@ -498,6 +516,8 @@
       const [removedPetals, setRemovedPetals] = useState({});
       const heroRef = useRef(null);
       const [heroSize, setHeroSize] = useState({ width: 0, height: 0 });
+      const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 640px)').matches);
+      const lastTapRef = useRef({ id: null, time: 0 });
 
       const pieces = [
         { id: 'p1', type: 'heart', color: '#C41E6A', colorLight: '#FFE4EC', size: 75, rotation: -20, finalPercent: { x: 5, y: 15 } },
@@ -542,6 +562,18 @@
       }, []);
 
       useEffect(() => {
+        const mq = window.matchMedia('(max-width: 640px)');
+        const handleMobileChange = () => setIsMobile(mq.matches);
+        handleMobileChange();
+        if (mq.addEventListener) mq.addEventListener('change', handleMobileChange);
+        else mq.addListener(handleMobileChange);
+        return () => {
+          if (mq.removeEventListener) mq.removeEventListener('change', handleMobileChange);
+          else mq.removeListener(handleMobileChange);
+        };
+      }, []);
+
+      useEffect(() => {
         if (heroSize.width === 0) return;
         const init = {};
         const initRot = {};
@@ -566,15 +598,89 @@
         setAnimationComplete(prev => ({ ...prev, [id]: true }));
       };
 
+const getResponsiveSize = (piece) => {
+        if (heroSize.width < 640) return piece.size * 0.6;
+        if (heroSize.width < 1024) return piece.size * 0.8;
+        return piece.size;
+      };
+
+      const handleDoubleTapAction = (e, id, piece) => {
+        e.preventDefault();
+        if (piece.type === 'leaf' || piece.type === 'roundleaf') {
+          setRotations(prev => ({ ...prev, [id]: (prev[id] || 0) + 45 }));
+          return;
+        }
+        const pos = positions[id] || {
+          x: (piece.finalPercent.x / 100) * heroSize.width,
+          y: (piece.finalPercent.y / 100) * heroSize.height,
+        };
+        const petalCount = 5 + Math.floor(Math.random() * 3);
+        const size = getResponsiveSize(piece);
+        const newFlower = {
+          id: `flower-${flowerIdCounter}`,
+          x: pos.x,
+          y: pos.y,
+          petalCount,
+          color: piece.color,
+          colorLight: piece.colorLight,
+          size,
+          type: piece.type,
+        };
+        setFlowers(prev => [...prev, newFlower]);
+        setFlowerIdCounter(prev => prev + 1);
+        setRemovedPetals(prev => ({ ...prev, [id]: true }));
+      };
+
+      const handleTouchStartPiece = (e, id, piece) => {
+        if (!heroRef.current) return;
+        const t = e.touches && e.touches[0];
+        if (!t) return;
+        const now = Date.now();
+        const last = lastTapRef.current;
+        const isDoubleTap = last.id === id && (now - last.time) < 280;
+
+        if (isDoubleTap) {
+          lastTapRef.current = { id: null, time: 0 };
+          handleDoubleTapAction(e, id, piece);
+          return;
+        }
+
+        e.preventDefault();
+        const rect = e.currentTarget.getBoundingClientRect();
+        setDragOffset({ x: t.clientX - rect.left, y: t.clientY - rect.top });
+        setDragging(id);
+        setAnimationComplete(prev => ({ ...prev, [id]: true }));
+        lastTapRef.current = { id, time: now };
+      };
+
+      const handleTouchMove = (e) => {
+        if (!dragging || !heroRef.current) return;
+        const t = e.touches && e.touches[0];
+        if (!t) return;
+        e.preventDefault();
+        const rect = heroRef.current.getBoundingClientRect();
+        const touchX = t.clientX - rect.left;
+        const touchY = t.clientY - rect.top;
+        const newPos = { x: touchX - dragOffset.x, y: touchY - dragOffset.y };
+        if (String(dragging).startsWith('flower-')) {
+          setFlowers(prev => prev.map(f => f.id === dragging ? { ...f, x: newPos.x, y: newPos.y } : f));
+        } else {
+          setPositions(prev => ({ ...prev, [dragging]: newPos }));
+        }
+      };
+
+      const handleTouchEnd = () => setDragging(null);
+
       const handleDoubleClick = (e, id, piece) => {
         e.preventDefault();
         if (piece.type === 'leaf' || piece.type === 'roundleaf') {
           setRotations(prev => ({ ...prev, [id]: (prev[id] || 0) + 45 }));
           return;
         }
-        const pos = positions[id] || piece.final;
+        const pos = positions[id] || { x: (piece.finalPercent.x / 100) * heroSize.width, y: (piece.finalPercent.y / 100) * heroSize.height };
         const petalCount = 5 + Math.floor(Math.random() * 3);
-        const newFlower = { id: `flower-${flowerIdCounter}`, x: pos.x, y: pos.y, petalCount, color: piece.color, colorLight: piece.colorLight, size: piece.size, type: piece.type };
+        const size = getResponsiveSize(piece);
+        const newFlower = { id: `flower-${flowerIdCounter}`, x: pos.x, y: pos.y, petalCount, color: piece.color, colorLight: piece.colorLight, size, type: piece.type };
         setFlowers(prev => [...prev, newFlower]);
         setFlowerIdCounter(prev => prev + 1);
         setRemovedPetals(prev => ({ ...prev, [id]: true }));
@@ -612,7 +718,7 @@
         const isComplete = animationComplete[piece.id];
         const isDraggingThis = dragging === piece.id;
         const isLeaf = piece.type === 'leaf' || piece.type === 'roundleaf';
-        const responsiveSize = heroSize.width < 640 ? piece.size * 0.6 : heroSize.width < 1024 ? piece.size * 0.8 : piece.size;
+        const responsiveSize = getResponsiveSize(piece);
         const style = {
           left: isComplete || isDraggingThis ? pos.x : finalPos.x,
           top: isComplete || isDraggingThis ? pos.y : finalPos.y,
@@ -620,7 +726,8 @@
           cursor: isDraggingThis ? 'grabbing' : 'grab',
           animation: !isComplete && !isDraggingThis ? `fall 2.8s ease-out ${0.1 + index * 0.2}s forwards` : 'none',
         };
-        const props = { size: responsiveSize, rotation: rot, style, onMouseDown: (e) => handleMouseDown(e, piece.id), onDoubleClick: (e) => handleDoubleClick(e, piece.id, piece) };
+        const tooltipText = isLeaf ? 'double tap to rotate' : 'double tap for a surprise';
+        const props = { size: responsiveSize, rotation: rot, style, isMobile, tooltipText, onMouseDown: (e) => handleMouseDown(e, piece.id), onDoubleClick: (e) => handleDoubleClick(e, piece.id, piece), onTouchStart: (e) => handleTouchStartPiece(e, piece.id, piece) };
         switch (piece.type) {
           case 'heart': return <HeartPetal key={piece.id} {...props} color={piece.color} colorLight={piece.colorLight} />;
           case 'pointed': return <PointedPetal key={piece.id} {...props} color={piece.color} colorLight={piece.colorLight} />;
@@ -635,16 +742,17 @@
       const renderFlower = (flower) => {
         const isDraggingThis = dragging === flower.id;
         const petals = [];
-        const flowerSize = flower.size * 2.5;
+        const petalBase = flower.size * (isMobile ? 0.7 : 1);
+        const flowerSize = petalBase * (isMobile ? 1.8 : 2.5);
         for (let i = 0; i < flower.petalCount; i++) {
           const angle = (360 / flower.petalCount) * i - 90;
           const petalStyle = { position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -100%) rotate(${angle + 90}deg)`, transformOrigin: 'center bottom' };
           petals.push(
             <div key={i} style={petalStyle}>
-              {flower.type === 'heart' && <svg viewBox="0 0 60 66" style={{ width: flower.size * 0.9, height: flower.size }}><defs><radialGradient id={`hg-flower-${flower.id}-${i}`} cx="50%" cy="80%" r="70%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M30 62 Q20 58 12 48 Q4 38 4 28 Q4 18 12 12 Q20 6 30 10 Q40 6 48 12 Q56 18 56 28 Q56 38 48 48 Q40 58 30 62Z" fill={`url(#hg-flower-${flower.id}-${i})`} /></svg>}
-              {flower.type === 'pointed' && <svg viewBox="0 0 42 96" style={{ width: flower.size * 0.5, height: flower.size * 1.1 }}><defs><linearGradient id={`pg-flower-${flower.id}-${i}`} x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="60%" stopColor={flower.color} /></linearGradient></defs><path d="M21 2 Q28 15 34 30 Q40 45 40 60 Q40 75 34 84 Q28 92 21 94 Q14 92 8 84 Q2 75 2 60 Q2 45 8 30 Q14 15 21 2Z" fill={`url(#pg-flower-${flower.id}-${i})`} /></svg>}
-              {flower.type === 'round' && <svg viewBox="0 0 60 63" style={{ width: flower.size * 0.85, height: flower.size * 0.9 }}><defs><radialGradient id={`rg-flower-${flower.id}-${i}`} cx="50%" cy="90%" r="80%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M30 60 Q18 58 10 48 Q2 38 2 28 Q2 14 16 6 Q30 0 44 6 Q58 14 58 28 Q58 38 50 48 Q42 58 30 60Z" fill={`url(#rg-flower-${flower.id}-${i})`} /></svg>}
-              {flower.type === 'small' && <svg viewBox="0 0 36 60" style={{ width: flower.size * 0.5, height: flower.size * 0.85 }}><defs><radialGradient id={`sg-flower-${flower.id}-${i}`} cx="50%" cy="70%" r="60%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M18 56 Q8 50 4 38 Q0 26 6 14 Q12 4 18 2 Q24 4 30 14 Q36 26 32 38 Q28 50 18 56Z" fill={`url(#sg-flower-${flower.id}-${i})`} /></svg>}
+              {flower.type === 'heart' && <svg viewBox="0 0 60 66" style={{ width: petalBase * 0.9, height: petalBase }}><defs><radialGradient id={`hg-flower-${flower.id}-${i}`} cx="50%" cy="80%" r="70%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M30 62 Q20 58 12 48 Q4 38 4 28 Q4 18 12 12 Q20 6 30 10 Q40 6 48 12 Q56 18 56 28 Q56 38 48 48 Q40 58 30 62Z" fill={`url(#hg-flower-${flower.id}-${i})`} /></svg>}
+              {flower.type === 'pointed' && <svg viewBox="0 0 42 96" style={{ width: petalBase * 0.5, height: petalBase * 1.1 }}><defs><linearGradient id={`pg-flower-${flower.id}-${i}`} x1="50%" y1="100%" x2="50%" y2="0%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="60%" stopColor={flower.color} /></linearGradient></defs><path d="M21 2 Q28 15 34 30 Q40 45 40 60 Q40 75 34 84 Q28 92 21 94 Q14 92 8 84 Q2 75 2 60 Q2 45 8 30 Q14 15 21 2Z" fill={`url(#pg-flower-${flower.id}-${i})`} /></svg>}
+              {flower.type === 'round' && <svg viewBox="0 0 60 63" style={{ width: petalBase * 0.85, height: petalBase * 0.9 }}><defs><radialGradient id={`rg-flower-${flower.id}-${i}`} cx="50%" cy="90%" r="80%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M30 60 Q18 58 10 48 Q2 38 2 28 Q2 14 16 6 Q30 0 44 6 Q58 14 58 28 Q58 38 50 48 Q42 58 30 60Z" fill={`url(#rg-flower-${flower.id}-${i})`} /></svg>}
+              {flower.type === 'small' && <svg viewBox="0 0 36 60" style={{ width: petalBase * 0.5, height: petalBase * 0.85 }}><defs><radialGradient id={`sg-flower-${flower.id}-${i}`} cx="50%" cy="70%" r="60%"><stop offset="0%" stopColor={flower.colorLight} /><stop offset="100%" stopColor={flower.color} /></radialGradient></defs><path d="M18 56 Q8 50 4 38 Q0 26 6 14 Q12 4 18 2 Q24 4 30 14 Q36 26 32 38 Q28 50 18 56Z" fill={`url(#sg-flower-${flower.id}-${i})`} /></svg>}
             </div>
           );
         }
@@ -652,14 +760,14 @@
           <div key={flower.id} className="absolute select-none touch-none" style={{ left: flower.x - flowerSize / 2, top: flower.y - flowerSize / 2, width: flowerSize, height: flowerSize, zIndex: isDraggingThis ? 100 : 40, cursor: isDraggingThis ? 'grabbing' : 'grab' }} onMouseDown={(e) => handleFlowerMouseDown(e, flower.id)}>
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               {petals}
-              <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: flower.size * 0.3, height: flower.size * 0.3, borderRadius: '50%', background: 'radial-gradient(circle at 30% 30%, #FFF6A5 0%, #FFE033 50%, #E6B800 100%)', zIndex: 10 }} />
+              <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: petalBase * 0.3, height: petalBase * 0.3, borderRadius: '50%', background: 'radial-gradient(circle at 30% 30%, #FFF6A5 0%, #FFE033 50%, #E6B800 100%)', zIndex: 10 }} />
             </div>
           </div>
         );
       };
 
       return (
-        <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6' }} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
+        <div className="min-h-screen" style={{ backgroundColor: '#FAF9F6', touchAction: 'none' }} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd} onTouchCancel={handleTouchEnd}>
           <nav className="fixed top-0 left-0 right-0 px-4 sm:px-8 md:px-16 py-4 sm:py-6 flex justify-between items-center z-50" style={{ backgroundColor: 'rgba(250,249,246,0.9)', backdropFilter: 'blur(12px)' }}>
             <span className="text-stone-800 font-medium text-sm sm:text-base">Juju</span>
             <div className="flex gap-4 sm:gap-8 text-xs sm:text-sm text-stone-400">
@@ -675,7 +783,7 @@
             <div className="relative z-10 max-w-xl pt-16 sm:pt-20">
               <p className="text-stone-400 text-xs sm:text-sm mb-3 sm:mb-4">Hi, I'm Juju</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 leading-tight tracking-tight mb-4 sm:mb-6">Product Designer<br /><span className="text-stone-400">shaping ideas into<br />real products</span></h1>
-              <p className="text-stone-500 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-md">I blend design thinking with technical fluency and Ai to ship products users love. Currently completing my MS in Information Systems at Northeastern University.</p>
+              <p className="text-stone-500 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-md">I blend design thinking with technical fluency and AI to ship products users love. Currently completing my MS in Information Systems at Northeastern University.</p>
               <a href="mailto:fu.shih@northeastern.edu" className="inline-flex items-center gap-2 bg-stone-800 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm hover:bg-stone-700 transition-colors">Get in touch</a>
             </div>
             <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-8 md:left-16 flex items-center gap-2 text-stone-300 text-xs sm:text-sm z-10">
@@ -703,41 +811,134 @@
             </div>
           </section>
 
-          <section id="about" className="px-8 md:px-16 py-24 bg-stone-50">
-            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-              <div className="md:col-span-3 flex justify-center md:justify-start">
-                <div className="w-48 h-64 md:w-full md:h-72 rounded-2xl overflow-hidden border border-stone-200">
-                  <img src="shihjuprofile.png" alt="Juju - Product Designer" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="md:col-span-7">
-                <h2 className="text-2xl md:text-3xl font-light text-stone-800 mb-6">Behind the Pixels</h2>
-                <div className="space-y-4 text-stone-500 leading-relaxed text-sm">
-                  <p>I grew up in the expat community in Suzhou, China, surrounded by different cultures, languages, and creative influences. That early exposure shaped how I see the world and eventually led me to study design in the US.</p>
-                  <p>I later moved to New York City, where I earned my BFA in Communication Design at Parsons School of Design. There, I learned design thinking as a way to approach problems, focusing on understanding people, embracing ambiguity, and turning complexity into clarity. That mindset is what drew me to product design.</p>
-                  <p>I'm now based in Oakland, California, completing my MS in Information Systems and exploring the technical side of building products, from systems to code and how thoughtful design sits at the intersection.</p>
-                  <p>Creativity has always followed me around. I've been designing and oil painting since high school, and these days I unwind through floral arrangements, painting, and an ongoing sourdough obsession.</p>
-                </div>
-                <div className="mt-8">
-                  <h3 className="text-base md:text-lg font-light text-stone-700 mb-4">When I'm not on Figma...</h3>
-                  <div className="flex gap-6">
-                    {hobbies.map((hobby, i) => (
-                      <div key={i} className="group text-center">
-                        <p className="text-xs text-stone-600 font-medium mb-2" style={{ color: hobby.color }}>{hobby.name}</p>
-                        <div className="w-14 h-14 mx-auto flex items-center justify-center transition-transform hover:scale-110">
-                          {hobby.image ? <img src={hobby.image} alt={hobby.name} className="w-full h-full object-contain" /> : <div className="w-12 h-12 rounded-lg bg-stone-200 flex items-center justify-center text-stone-400 text-xs">img</div>}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="md:col-span-2">
-                <div className="flex items-center gap-2 text-sm mb-4"><span className="w-2 h-2 rounded-full bg-green-500" /><span className="text-stone-600">Oakland, CA</span></div>
-                <div className="flex flex-wrap gap-2">{['Figma', 'React', 'Python', 'SQL', 'User Research', 'Prototyping'].map((skill, i) => <span key={i} className="text-xs px-3 py-1.5 rounded-full bg-white text-stone-500 border border-stone-200">{skill}</span>)}</div>
+          
+
+<section id="about" className="px-8 md:px-16 py-24 bg-stone-50">
+  {/* MOBILE LAYOUT */}
+  <div className="md:hidden flex flex-col gap-6">
+    <h2 className="text-2xl font-light text-stone-800">Behind the Pixels</h2>
+
+    <div className="flex flex-col items-center">
+      <div className="w-full max-w-sm h-80 rounded-2xl overflow-hidden border border-stone-200">
+        <img src="shihjuprofile.png" alt="Juju - Product Designer" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="mt-5 flex items-center gap-3 flex-wrap justify-center">
+        <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view?usp=sharing"
+           target="_blank"
+           className="inline-flex items-center gap-2 bg-stone-800 text-white px-4 py-2 rounded-full text-xs hover:bg-stone-700 transition-colors">
+          Resume
+        </a>
+
+        <a href="https://linkedin.com/in/shihjufu" target="_blank"
+           className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-100">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 21h4V9H3v12Zm7 0h4v-6.2c0-3.3 4-3.6 4 0V21h4v-7.5c0-6.2-7-6-8-3V9h-4v12Z"/>
+          </svg>
+        </a>
+
+        <a href="mailto:fu.shih@northeastern.edu"
+           className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-100">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 6-10 7L2 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div className="flex flex-row flex-wrap gap-3">
+      {['Figma','React','Python','SQL','User Research','Prototyping'].map((skill,i)=>(
+        <span key={i} className="text-xs px-3 py-1 rounded-full bg-white text-stone-500 border border-stone-200 whitespace-nowrap leading-none inline-flex items-center">{skill}</span>
+      ))}
+    </div>
+
+    <div className="space-y-4 text-stone-500 leading-relaxed text-sm">
+      <p>I grew up in the expat community in Suzhou, China, surrounded by different cultures, languages, and creative influences. That early exposure shaped how I see the world and eventually led me to study design in the US.</p>
+      <p>I later moved to New York City, where I earned my BFA in Communication Design at Parsons School of Design. There, I learned design thinking as a way to approach problems, focusing on understanding people, embracing ambiguity, and turning complexity into clarity. That mindset is what drew me to product design.</p>
+      <p>I'm now based in Oakland, California, completing my MS in Information Systems and exploring the technical side of building products, from systems to code and how thoughtful design sits at the intersection.</p>
+    </div>
+
+    <div className="mt-2">
+      <h3 className="text-base font-light text-stone-700 mb-4">When I'm not on Figma...</h3>
+      <div className="flex gap-6">
+        {hobbies.map((hobby, i) => (
+          <div key={i} className="group text-center">
+            <p className="text-xs text-stone-600 font-medium mb-2" style={{ color: hobby.color }}>{hobby.name}</p>
+            <div className="w-14 h-14 mx-auto flex items-center justify-center transition-transform hover:scale-110">
+              <img src={hobby.image} alt={hobby.name} className="w-full h-full object-contain" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* DESKTOP/TABLET LAYOUT */}
+  <div className="hidden md:grid md:grid-cols-12 gap-8 md:gap-12">
+    <div className="md:col-span-3 flex flex-col items-start">
+      <div className="w-full h-72 rounded-2xl overflow-hidden border border-stone-200">
+        <img src="shihjuprofile.png" alt="Juju - Product Designer" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="mt-5 flex items-center gap-3 flex-wrap">
+        <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view?usp=sharing"
+           target="_blank"
+           className="inline-flex items-center gap-2 bg-stone-800 text-white px-4 py-2 rounded-full text-xs hover:bg-stone-700 transition-colors">
+          Resume
+        </a>
+
+        <a href="https://linkedin.com/in/shihjufu" target="_blank"
+           className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-100">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 21h4V9H3v12Zm7 0h4v-6.2c0-3.3 4-3.6 4 0V21h4v-7.5c0-6.2-7-6-8-3V9h-4v12Z"/>
+          </svg>
+        </a>
+
+        <a href="mailto:fu.shih@northeastern.edu"
+           className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-100">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 6-10 7L2 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div className="md:col-span-7">
+      <h2 className="text-2xl md:text-3xl font-light text-stone-800 mb-6">Behind the Pixels</h2>
+      <div className="space-y-4 text-stone-500 leading-relaxed text-sm">
+        <p>I grew up in the expat community in Suzhou, China, surrounded by different cultures, languages, and creative influences. That early exposure shaped how I see the world and eventually led me to study design in the US.</p>
+        <p>I later moved to New York City, where I earned my BFA in Communication Design at Parsons School of Design. There, I learned design thinking as a way to approach problems, focusing on understanding people, embracing ambiguity, and turning complexity into clarity. That mindset is what drew me to product design.</p>
+        <p>I'm now based in Oakland, California, completing my MS in Information Systems and exploring the technical side of building products, from systems to code and how thoughtful design sits at the intersection.</p>
+      </div>
+
+      <div className="mt-8">
+        <h3 className="text-base md:text-lg font-light text-stone-700 mb-4">When I'm not on Figma...</h3>
+        <div className="flex gap-6">
+          {hobbies.map((hobby, i) => (
+            <div key={i} className="group text-center">
+              <p className="text-xs text-stone-600 font-medium mb-2" style={{ color: hobby.color }}>{hobby.name}</p>
+              <div className="w-14 h-14 mx-auto flex items-center justify-center transition-transform hover:scale-110">
+                <img src={hobby.image} alt={hobby.name} className="w-full h-full object-contain" />
               </div>
             </div>
-          </section>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div className="md:col-span-2 flex justify-end self-start">
+      <div className="flex flex-row flex-wrap justify-end gap-3 items-start content-start">
+        {['Figma','React','Python','SQL','User Research','Prototyping'].map((skill,i)=>(
+          <span key={i} className="text-xs px-3 py-1 rounded-full bg-white text-stone-500 border border-stone-200 whitespace-nowrap leading-none inline-flex items-center">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
           {/* GARDEN SECTION */}
           <GardenSection />
