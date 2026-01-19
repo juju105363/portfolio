@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Scan2Sell - Juju</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+      :root {
+         --bg: #FAF9F6;
+      }
+
+      body {
+         background: var(--bg);
+      }
+
+      .shadow-soft {
+         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      }
+   </style>
+</head>
+
+<body class="text-stone-800">
+   <div class="min-h-screen" style="background-color:#FAF9F6;">
+      <!-- Header -->
+      <nav class="fixed top-0 left-0 right-0 px-4 sm:px-8 md:px-16 py-4 sm:py-6 flex justify-between items-center z-50"
+         style="background-color: rgba(250,249,246,0.9); backdrop-filter: blur(12px);">
+         <a href="index.html" class="text-stone-800 font-medium text-sm sm:text-base">Juju</a>
+         <div class="flex gap-4 sm:gap-8 text-xs sm:text-sm text-stone-400">
+            <a href="index.html#work" class="hover:text-stone-700">Work</a>
+            <a href="visuals.html" class="text-stone-700">Visuals</a>
+            <a href="index.html#about" class="hover:text-stone-700">About</a>
+         </div>
+      </nav>
+
+      <main class="pt-24 sm:pt-28 md:pt-32 pb-20">
+         <div class="max-w-4xl mx-auto px-4 sm:px-8 md:px-16">
+
+            <!-- HERO -->
+            <header class="mb-12">
+               <a href="visuals.html"
+                  class="inline-flex items-center gap-2 text-stone-400 text-sm hover:text-stone-600 mb-6">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back to Visuals
+               </a>
+
+               <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-stone-800">
+                  Scan2Sell
+               </h1>
+               <p class="mt-3 text-stone-400 text-base sm:text-lg max-w-2xl">
+                  Barcode-based product upload for fast inventory digitization
+               </p>
+
+               <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+                     style="background: rgba(232, 74, 27, 0.1); color: #E84A1B;">Graphic Design</span>
+                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+                     style="background: rgba(232, 74, 27, 0.1); color: #E84A1B;">Shopify Listing</span>
+                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+                     style="background: rgba(232, 74, 27, 0.1); color: #E84A1B;">User Onboarding</span>
+               </div>
+            </header>
+
+            <!-- MAIN IMAGE -->
+            <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft mb-8">
+               <img src="visuals_png/scan2sell_png/1.webp" alt="Scan2Sell - How to add product"
+                  class="w-full h-auto aspect-[16/9] object-cover" />
+            </div>
+
+            <!-- WRITING -->
+            <section class="mb-12">
+               <div class="prose prose-stone max-w-none">
+                  <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+                     Scan2Sell is a Shopify app for merchants managing large physical inventories. Instead of manual
+                     data entry, users scan product barcodes to instantly auto-fill professional images, titles, and
+                     descriptions—getting products online in seconds.
+                  </p>
+                  <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+                     Before designing the App Store listing, I needed to fully understand the product: how the four
+                     upload methods work (camera scanner, Bluetooth gun, photo capture, CSV import), how the AI
+                     auto-fill behaves, and how it integrates with Shopify POS. The challenge was distilling a
+                     multi-step technical workflow into static images that follow Shopify's strict listing guidelines
+                     while answering the user's core questions—how do I start, what are my options, and what happens
+                     after I scan. It's similar to creating an easy-to-understand onboarding flow, but entirely through
+                     static visuals.
+                  </p>
+               </div>
+            </section>
+
+            <!-- IMAGE GALLERY -->
+            <section class="space-y-6">
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/2.webp" alt="Scan2Sell - Get products online in seconds"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/3.webp" alt="Scan2Sell - 4 Quick methods to upload"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/4.webp" alt="Scan2Sell - Review and upload product data"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/5.webp" alt="Scan2Sell - Now available on Shopify POS"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/6.webp" alt="Scan2Sell - Socket Scanner integration"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+
+               <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+                  <img src="visuals_png/scan2sell_png/7.webp" alt="Scan2Sell - POS Tile integration"
+                     class="w-full h-auto aspect-[16/9] object-cover" />
+               </div>
+            </section>
+
+            <!-- BACK LINK -->
+            <div class="mt-12 pt-8 border-t border-stone-200">
+               <a href="visuals.html"
+                  class="inline-flex items-center gap-2 text-stone-500 text-sm hover:text-stone-700">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back to Visual Works
+               </a>
+            </div>
+
+         </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="px-4 sm:px-8 md:px-16 py-12 border-t border-stone-200">
+         <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+               <div>
+                  <p class="text-stone-400 text-sm mb-1">Let's work together</p>
+                  <a href="mailto:fu.shih@northeastern.edu"
+                     class="text-stone-800 hover:text-stone-500">fu.shih@northeastern.edu</a>
+               </div>
+               <div class="flex gap-6 text-sm text-stone-400">
+                  <a href="https://linkedin.com/in/shihjufu" target="_blank" class="hover:text-stone-600"
+                     rel="noreferrer">LinkedIn</a>
+                  <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view" target="_blank"
+                     class="hover:text-stone-600">Resume</a>
+               </div>
+            </div>
+            <p class="mt-12 text-stone-300 text-sm italic text-center">Great design is always hidden in plain sight.</p>
+         </div>
+      </footer>
+   </div>
+</body>
+
+</html>
