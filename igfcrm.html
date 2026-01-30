@@ -39,6 +39,63 @@
          font-size: 12px;
          color: rgb(87, 83, 78);
       }
+
+      .insight-card {
+         border-left: 3px solid rgb(34, 197, 94);
+         background: rgba(34, 197, 94, 0.04);
+      }
+
+      .tradeoff-card {
+         border-left: 3px solid rgb(245, 158, 11);
+         background: rgba(245, 158, 11, 0.04);
+      }
+
+      .constraint-pill {
+         font-size: 11px;
+         padding: 4px 10px;
+         border-radius: 12px;
+         background: rgba(245, 158, 11, 0.1);
+         color: rgb(180, 83, 9);
+         border: 1px solid rgba(245, 158, 11, 0.2);
+      }
+
+      .ux-decision-note {
+         background: rgba(59, 130, 246, 0.05);
+         border-left: 3px solid rgb(59, 130, 246);
+         padding: 12px 16px;
+         margin: 16px 0;
+         border-radius: 0 8px 8px 0;
+      }
+
+      .comparison-grid {
+         display: grid;
+         grid-template-columns: 1fr auto 1fr;
+         gap: 16px;
+         align-items: center;
+      }
+
+      .vs-circle {
+         width: 32px;
+         height: 32px;
+         background: white;
+         border: 2px solid rgb(229, 231, 235);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 12px;
+         font-weight: 600;
+         color: rgb(107, 114, 128);
+      }
+
+      .hybrid-badge {
+         background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+         border: 1px solid rgba(168, 85, 247, 0.2);
+         color: rgb(126, 34, 206);
+         font-size: 11px;
+         padding: 4px 10px;
+         border-radius: 12px;
+      }
    </style>
 </head>
 
@@ -49,14 +106,13 @@
       <div class="max-w-6xl mx-auto flex items-center justify-between">
          <a href="index.html" class="text-stone-800 font-medium text-sm sm:text-base">Juju</a>
          <div class="flex items-center gap-4 sm:gap-8 text-xs sm:text-sm text-stone-400">
-            <a href="#overview" class="hover:text-stone-700">Overview</a>
-            <a href="#process" class="hover:text-stone-700">Process</a>
-            <a href="#design" class="hover:text-stone-700">Design</a>
-            <a href="#reflection" class="hover:text-stone-700">Reflection</a>
+            <a href="index.html#work" class="hover:text-stone-700">Work</a>
+            <a href="visuals.html" class="hover:text-stone-700">Visuals</a>
+            <a href="index.html#about" class="hover:text-stone-700">About</a>
          </div>
       </div>
    </nav>
-
+   
    <!-- Page -->
    <main class="pt-24 sm:pt-28 md:pt-32 pb-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 md:px-16">
@@ -64,390 +120,561 @@
          <header class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-start">
             <div class="lg:col-span-7">
                <p class="text-stone-400 text-sm sm:text-base mb-3">Case Study</p>
+               
                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight">
                   Influencer Gifting CRM
-                  <span class="block text-stone-400">relationship-first dashboard for gifting teams</span>
+                  <span class="block text-stone-400">From scattered orders to relationship visibility for brand marketers</span>
                </h1>
 
                <p class="mt-4 sm:mt-6 text-stone-500 text-sm sm:text-base leading-relaxed max-w-xl">
-                  Designed a purpose-built CRM that helps brands understand influencer relationships across gifts,
-                  spend, and posts, with a phased rollout that reduces technical risk.
+                  Within Influencer Gift Form, brands are using our form to give multiple influencers $1000+ branded gifts, but they had no way to see their relationship: total spend, gifting frequency or content received. I designed a CRM system that consolidates this data and recommended a phased rollout to expand on the system.
                </p>
 
                <div class="mt-6 flex flex-wrap gap-2">
                   <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
-                     style="background: rgba(34,197,94,0.12); color: rgb(21,128,61);">B2B SaaS</span>
+                     style="background: rgba(34,197,94,0.12); color: rgb(21,128,61);">B2B Saas</span>
                   <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
                      style="background: rgba(244,63,94,0.10); color: rgb(190,18,60);">Product Design</span>
-                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
-                     style="background: rgba(59,130,246,0.10); color: rgb(30,64,175);">Systems Thinking</span>
-                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
-                     style="background: rgba(245,158,11,0.12); color: rgb(180,83,9);">Interaction Design</span>
                </div>
 
                <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-stone-500">
                   <span class="kbd">Role: Product Designer</span>
-                  <span class="kbd">Deliverable: interactive Figma prototype</span>
-                  <span class="kbd">Scope: Phase 1 + Phase 2 concept</span>
+                  <span class="kbd">Output: Coded Interactive Prototype</span>
+                  <span class="kbd">Status: In Development</span>
                </div>
             </div>
 
-            <!-- Hero visual placeholder -->
+            <!-- Hero visual -->
             <div class="lg:col-span-5">
                <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
-                  <div class="px-5 py-4 border-b border-stone-200">
-                     <div class="flex items-center justify-between">
-                        <p class="text-sm font-medium text-stone-700">Hero Visual</p>
-                        <span class="text-xs text-stone-400">Drop your best screenshot here</span>
-                     </div>
+                  <div class="rounded-xl m-4 h-56 sm:h-72 flex items-center justify-center">
+                     <img src="null.png" alt="Hero image" class="w-full h-full object-cover rounded-xl">
                   </div>
-
-                  <div class="p-5">
-                     <div class="ph rounded-xl h-56 sm:h-72 flex items-center justify-center text-center px-6">
-                        <div>
-                           <div class="ph-label mb-2">Placeholder</div>
-                           <div class="text-stone-600 text-sm font-medium">Final CRM Table (Phase 1)</div>
-                           <p class="text-stone-400 text-xs mt-2 max-w-xs">
-                              Recommended: clean full-width table view with profile photos + socials + gifts + spend.
-                           </p>
-                        </div>
-                     </div>
-
-                     <div class="mt-4 grid grid-cols-3 gap-3">
-                        <div class="ph rounded-xl h-16 flex items-center justify-center text-center px-2">
-                           <div>
-                              <div class="ph-label">Thumb</div>
-                              <div class="text-[11px] text-stone-600">Sidebar open</div>
-                           </div>
-                        </div>
-                        <div class="ph rounded-xl h-16 flex items-center justify-center text-center px-2">
-                           <div>
-                              <div class="ph-label">Thumb</div>
-                              <div class="text-[11px] text-stone-600">Add post modal</div>
-                           </div>
-                        </div>
-                        <div class="ph rounded-xl h-16 flex items-center justify-center text-center px-2">
-                           <div>
-                              <div class="ph-label">Thumb</div>
-                              <div class="text-[11px] text-stone-600">Data model diagram</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- Quick links -->
-               <div class="mt-4 flex flex-wrap gap-2">
-                  <a href="#design"
-                     class="inline-flex items-center gap-2 bg-stone-800 text-white px-4 py-2 rounded-full text-xs hover:bg-stone-700">Jump
-                     to designs</a>
-                  <a href="#overview"
-                     class="inline-flex items-center gap-2 border border-stone-200 bg-white px-4 py-2 rounded-full text-xs text-stone-600 hover:bg-stone-50">Read
-                     overview</a>
                </div>
             </div>
          </header>
 
+         <!-- The Insight -->
+         <section class="mt-14">
+            <div class="insight-card rounded-2xl p-6">
+               <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Insight</p>
+               <p class="text-lg sm:text-xl text-stone-800 font-medium leading-snug">
+                  We already have most of the information in our system.
+               </p>
+               <p class="text-sm text-stone-600 mt-3 max-w-7xl">
+                  Through conversations with our PM (who interfaces with customers regularly), I learned brands maintain external spreadsheets to answer questions like "How many times have we gifted this person?" and "What's our total spend?"
+               </p>
+               <p class="text-sm text-stone-600 mt-3 max-w-7xl">
+                  Our Shopify App Influencer Gift Form is used for product marketers and brands to send gifts to influencers. As brands gift through our app, our forms already have most of this information. This can fully make our app more complete and fit to the marketer's needs and utilize the information brands have on hand through our app to the fullest.
+               </p>
+            </div>
+         </section>
+
          <!-- Meta cards -->
-         <section class="mt-10 sm:mt-14 grid md:grid-cols-3 gap-4">
+         <section class="mt-10 grid md:grid-cols-3 gap-4">
             <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
-               <p class="text-xs font-medium text-stone-600 mb-2">Problem</p>
-               <p class="text-sm text-stone-600 leading-relaxed">
-                  Customers tracked orders, but could not understand influencer relationships: who was gifted, how
-                  often, how much was spent, and which influencers posted.
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Problem</p>
+               <p class="text-sm text-stone-700 leading-relaxed">
+                  Brands currently can see individually what they sent to influencers through each form from each launch but not the full picture unless they externally record it with an excel or system.
                </p>
             </div>
+            
             <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
-               <p class="text-xs font-medium text-stone-600 mb-2">Goal</p>
-               <p class="text-sm text-stone-600 leading-relaxed">
-                  Build a relationship-centric CRM view that rolls up gifting history and enables post tracking through
-                  a simple, scalable workflow.
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Goal</p>
+               <p class="text-sm text-stone-700 leading-relaxed">
+                  Design a brand-influencer relationship overview tool that shows gifting history, their social media and content without overcomplicating the existing product.
                </p>
             </div>
+            
             <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
-               <p class="text-xs font-medium text-stone-600 mb-2">Constraints</p>
-               <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-1">
-                  <li>Influencers cannot be duplicated</li>
-                  <li>Influencers may exist across multiple stores</li>
-                  <li>Post scraping adds platform complexity</li>
-                  <li>Phase-based delivery needed</li>
-               </ul>
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">How Might We</p>
+               <p class="text-sm text-stone-700 leading-relaxed">
+                  Save marketers hours of manual work while giving them strategic relationship insights?
+               </p>
+            </div>
+         </section>
+
+         <!-- Research & Discovery -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Research & Discovery</h2>
+            <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+               Understanding the problem through PM insights and data analysis.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+               <!-- PM Feedback Card -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">PM/Customer Feedback</p>
+                  <p class="text-sm text-stone-700 leading-relaxed mb-4">
+                     Working directly with our PM (who also handles customer relations), I learned that brand marketers were consistently asking the same questions:
+                  </p>
+                  <ul class="text-sm text-stone-700 space-y-2 mb-4">
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">•</span>
+                        <span>"How many times have we gifted this influencer?"</span>
+                     </li>
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">•</span>
+                        <span>"What's our total spend with them?"</span>
+                     </li>
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">•</span>
+                        <span>"Have they posted about us yet?"</span>
+                     </li>
+                  </ul>
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="text-xs font-medium text-stone-700 mb-1">Key Finding</p>
+                     <p class="text-xs text-stone-600">Small brand CEOs (who manage their own marketing) were maintaining external spreadsheets to track this data - spending 2-3 hours monthly copying information from individual gift forms.</p>
+                  </div>
+               </div>
+
+               <!-- Data Analysis Card -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Order Data Analysis</p>
+                  <p class="text-sm text-stone-700 leading-relaxed mb-4">
+                     Analyzed our existing gift order data to understand relationship patterns:
+                  </p>
+                  <div class="grid grid-cols-2 gap-3">
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-2xl font-semibold text-emerald-700">20-30</p>
+                        <p class="text-xs text-emerald-600">Avg influencers per brand per quarter</p>
+                     </div>
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-2xl font-semibold text-emerald-700">5-7x</p>
+                        <p class="text-xs text-emerald-600">Some influencers gifted across campaigns</p>
+                     </div>
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-2xl font-semibold text-emerald-700">$150-$3.4K</p>
+                        <p class="text-xs text-emerald-600">Total spend range per influencer</p>
+                     </div>
+                     <div class="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                        <p class="text-2xl font-semibold text-amber-700">0%</p>
+                        <p class="text-xs text-amber-600">Relationship data visible in our system</p>
+                     </div>
+                  </div>
+               </div>
             </div>
          </section>
 
          <!-- Overview -->
          <section id="overview" class="mt-16 sm:mt-20">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Overview</h2>
-            <p class="text-stone-400 text-xs sm:text-sm mb-8 max-w-2xl">
-               A quick read that sets up the why, what, and what you shipped.
-            </p>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">What I Designed: The Influencer Relationship Hub</h2>
 
-            <div class="grid lg:grid-cols-12 gap-6">
-               <div class="lg:col-span-7 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">The key reframing</h3>
-                  <p class="text-stone-600 text-sm leading-relaxed">
-                     Orders are transactions. Influencers are relationships.
-                     The product needed a contact-style model so gifting and posts could roll up cleanly into one
-                     “relationship view.”
-                  </p>
+            <p class="text-stone-600 mb-6">I designed and delivered a complete <strong>Influencer Relationship Hub</strong> that consolidates all gifting and content data into one strategic dashboard. Here's what I built:</p>
 
-                  <div class="mt-5 ph rounded-xl p-5">
-                     <div class="ph-label mb-2">Placeholder diagram</div>
-                     <div class="text-stone-700 text-sm font-medium">Before vs After mental model</div>
-                     <p class="text-stone-500 text-xs mt-1">
-                        Before: Orders only. After: Influencer contact model with Orders and Posts attached.
-                     </p>
-                  </div>
-               </div>
+            <div class="overflow-x-auto">
+               <table class="w-full text-sm text-stone-700 border-collapse border border-stone-200 rounded-lg">
+                  <thead>
+                     <tr class="bg-stone-50">
+                        <th class="border border-stone-200 p-3 text-left font-semibold">Feature</th>
+                        <th class="border border-stone-200 p-3 text-left font-semibold">What It Does</th>
+                        <th class="border border-stone-200 p-3 text-left font-semibold">User Impact</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="border border-stone-200 p-3 font-medium">Influencer Table</td>
+                        <td class="border border-stone-200 p-3">Shows profile, socials with follower counts, total spend, gift order count. Includes sorting and filtering capabilities.</td>
+                        <td class="border border-stone-200 p-3">See all influencer relationships at a glance and identify top partners instantly.</td>
+                     </tr>
+                     <tr class="bg-stone-50">
+                        <td class="border border-stone-200 p-3 font-medium">Post Column & Sidebar</td>
+                        <td class="border border-stone-200 p-3">Clickable "show posts" button opens detailed view of all content from each influencer.</td>
+                        <td class="border border-stone-200 p-3">Track ROI and content performance without leaving the platform.</td>
+                     </tr>
+                     <tr>
+                        <td class="border border-stone-200 p-3 font-medium">Content Management</td>
+                        <td class="border border-stone-200 p-3">Add posts via TikTok or Instagram links. View post type, platform, likes, comments, and date. Sort and filter by content type.</td>
+                        <td class="border border-stone-200 p-3">Centralize content tracking and measure engagement across platforms.</td>
+                     </tr>
+                     <tr class="bg-stone-50">
+                        <td class="border border-stone-200 p-3 font-medium">Data Architecture</td>
+                        <td class="border border-stone-200 p-3">Contact model with influencers as entities, plus deduplication logic to prevent duplicates.</td>
+                        <td class="border border-stone-200 p-3">Accurate lifetime value calculations and clean, reliable data.</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
 
-               <div class="lg:col-span-5 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">What I delivered</h3>
-                  <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-2">
-                     <li>Influencer CRM table with rollup metrics (gifts and spend)</li>
-                     <li>Phase toggle concept (P1 vs P2)</li>
-                     <li>Posts side panel (progressive disclosure)</li>
-                     <li>Add post flow (URL input, preview state)</li>
-                     <li>Intake logic and duplication prevention considerations</li>
-                  </ul>
-
-                  <div class="mt-6 ph rounded-xl h-36 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Placeholder</div>
-                        <div class="text-stone-600 text-sm font-medium">Outcome screenshot or demo GIF</div>
-                        <p class="text-stone-400 text-xs mt-2">Optional: animated clip of table click to sidebar.</p>
-                     </div>
-                  </div>
-               </div>
+            <div class="mt-6 p-5 bg-white rounded-2xl border border-stone-200 shadow-soft">
+               <p class="text-stone-800 font-medium">The Complete Package:</p>
+               <p class="text-stone-600 mt-2">This integrated system eliminates manual spreadsheets by making our platform the single source of truth for influencer relationships. Marketers can now track total spend, gift history, and content performance in one place, saving hours of manual work and enabling strategic partnership decisions.</p>
             </div>
          </section>
 
          <!-- Process -->
          <section id="process" class="mt-16 sm:mt-20">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Process and Decision Rationale
-            </h2>
-            <p class="text-stone-400 text-xs sm:text-sm mb-8 max-w-2xl">
-               Keep this section tight. Each decision should connect to a user question and a system constraint.
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Process</h2>
+            <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+               The decisions that shaped the design — and the tradeoffs behind them.
             </p>
 
-            <div class="grid lg:grid-cols-12 gap-6">
-               <div class="lg:col-span-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">Why a table-first CRM</h3>
-                  <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-2">
-                     <li>Scales better than card grids for large influencer lists</li>
-                     <li>Supports fast scanning and comparison (CRM muscle memory)</li>
-                     <li>Creates a stable backbone for filters, tags, segments later</li>
-                  </ul>
+            <!-- Decision 1 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 1: Tables Over Cards — Designing for Comparison at Scale</h3>
+               
+               <p class="text-sm text-stone-600 mb-4">
+                  <strong class="text-stone-800">Initial Approach:</strong> I started with a card-based layout because it felt modern and visually appealing. Each influencer would have their own card with profile photo, social stats, and gifting history.
+               </p>
 
-                  <div class="mt-5 ph rounded-xl h-44 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Placeholder</div>
-                        <div class="text-stone-600 text-sm font-medium">Table exploration screenshot</div>
-                        <p class="text-stone-400 text-xs mt-2">Optional: column reasoning callouts.</p>
+               <p class="text-sm text-stone-600 mb-6">
+                  <strong class="text-stone-800">The Reality Check:</strong> When I populated the prototype with realistic scale (50+ influencers from our actual brand data), three problems became obvious:
+               </p>
+
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-40 flex items-center justify-center mb-3">
+                        <div>
+                           <div class="ph-label mb-2">V1</div>
+                           <div class="text-stone-600 text-sm font-medium">Cards - 10 Influencers</div>
+                        </div>
+                     </div>
+                     <div class="p-3 bg-stone-50 rounded-lg text-left">
+                        <p class="text-xs font-medium text-emerald-700 mb-1">✓ Looked clean</p>
+                        <p class="text-xs text-stone-600">Nice visual hierarchy</p>
+                        <p class="text-xs text-stone-600">Easy to scan by photo</p>
+                        <p class="text-xs text-stone-600">Modern aesthetic</p>
+                        <p class="text-xs text-amber-600 mt-2"><strong>Problem:</strong> Didn't test at real scale</p>
+                     </div>
+                  </div>
+                  
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-40 flex items-center justify-center mb-3">
+                        <div>
+                           <div class="ph-label mb-2">V2</div>
+                           <div class="text-stone-600 text-sm font-medium">Cards - 50+ Influencers</div>
+                        </div>
+                     </div>
+                     <div class="p-3 bg-red-50 rounded-lg border border-red-100 text-left">
+                        <p class="text-xs font-medium text-red-700 mb-1">✗ Fell apart</p>
+                        <p class="text-xs text-stone-600">Endless scrolling required</p>
+                        <p class="text-xs text-stone-600">Impossible to compare values</p>
+                        <p class="text-xs text-stone-600">2+ minutes to find specific influencer</p>
+                     </div>
+                  </div>
+                  
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-40 flex items-center justify-center mb-3">
+                        <div>
+                           <div class="ph-label mb-2">V3</div>
+                           <div class="text-stone-600 text-sm font-medium">Table - 50+ Influencers</div>
+                        </div>
+                     </div>
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-left">
+                        <p class="text-xs font-medium text-emerald-700 mb-1">✓ Solved core issues</p>
+                        <p class="text-xs text-stone-600">Fast scanning (10 seconds)</p>
+                        <p class="text-xs text-stone-600">Built-in side-by-side comparison</p>
+                        <p class="text-xs text-stone-600">Zero learning curve</p>
                      </div>
                   </div>
                </div>
 
-               <div class="lg:col-span-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">Why Phase 1 excludes posts</h3>
-                  <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-2">
-                     <li>Posts add scraping complexity and platform-specific edge cases</li>
-                     <li>Phase 1 uses high-confidence data from orders and influencer identity</li>
-                     <li>Phase split reduces risk while still delivering customer value fast</li>
-                  </ul>
+               <div class="ux-decision-note mb-4">
+                  <p class="text-sm text-stone-600"><strong>Testing Process:</strong> Created prototypes with 50+ influencer records using actual data from our brands. The comparison problem became immediately obvious - with cards, you can't see who you've spent the most with unless you click each one individually. In a table, you see everything at once.</p>
+               </div>
 
-                  <div class="mt-5 ph rounded-xl h-44 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Placeholder</div>
-                        <div class="text-stone-600 text-sm font-medium">Phase roadmap graphic</div>
-                        <p class="text-stone-400 text-xs mt-2">One simple visual: Phase 1 then Phase 2.</p>
-                     </div>
+               <div class="space-y-4">
+                  <div>
+                     <p class="font-medium text-stone-800 text-sm mb-1">Learning #1: Test at Real Scale Early</p>
+                     <p class="text-xs text-stone-600">My card design looked great with 5-10 sample influencers. But our actual brands manage 20-50+ relationships. I should have tested at realistic scale from day one, not after investing time in the card design.</p>
                   </div>
+
+                  <div>
+                     <p class="font-medium text-stone-800 text-sm mb-1">Learning #2: Comparison is the Primary Use Case</p>
+                     <p class="text-xs text-stone-600">I initially underestimated how much brands need to compare influencers. Through PM feedback, I learned this is their PRIMARY use case: "Who has the best ROI?" "Who should we gift next?" "Who have we spent the most with?"</p>
+                  </div>
+
+                  <div>
+                     <p class="font-medium text-stone-800 text-sm mb-1">Learning #3: Familiarity Drives Adoption</p>
+                     <p class="text-xs text-stone-600">I didn't realize tables give us a zero learning curve because brands already track influencers in spreadsheets. By mirroring their existing mental model (rows = influencers, columns = attributes), we eliminated onboarding friction entirely.</p>
+                  </div>
+               </div>
+
+               <p class="text-sm text-stone-600 mt-4">
+                  <strong class="text-stone-800">The Decision:</strong> Chose tables because brand marketers use this tool for comparison tasks. Tables align values in columns, making comparison visually intuitive with minimal cognitive load. Since brands already maintain spreadsheets, this pattern is immediately familiar.
+               </p>
+            </div>
+
+            <!-- Decision 2 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft mt-6">
+               <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 2: Manual vs Automatic Post Tracking — Working Within Technical Constraints</h3>
+               
+               <div class="mb-4">
+                  <p class="text-sm text-stone-600">
+                     <strong class="text-stone-800">The Constraint:</strong> We couldn't auto-fetch influencer posts and engagement data due to API limitations and resource constraints. Constant scanning of multiple platforms (Instagram, TikTok, Reels, Stories) would be technically complex and resource-intensive.
+                  </p>
+               </div>
+
+               <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700 mb-2">Automatic Scraping</p>
+                     <p class="text-xs text-stone-600"><strong>Ideal Scenario:</strong> Fully automated, no manual work for users</p>
+                     <p class="text-xs text-stone-600 mt-1"><strong>Reality:</strong> Requires building complex scrapers, constant API maintenance, and significant engineering resources</p>
+                  </div>
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700 mb-2">Manual URL Input</p>
+                     <p class="text-xs text-stone-600"><strong>Tradeoff:</strong> Requires user action to paste links</p>
+                     <p class="text-xs text-stone-600 mt-1"><strong>Advantage:</strong> Feasible with current resources, matches how marketers already work (copying links), gives users control over what gets tracked</p>
+                  </div>
+               </div>
+
+               <div class="ux-decision-note">
+                  <p class="text-sm text-stone-600"><strong>The Pivot:</strong> Instead of delaying launch for months to build scrapers, I designed a manual "Add Post" flow where brands paste URLs. The system fetches thumbnails and metadata automatically, still saving marketers time while keeping the MVP achievable.</p>
+               </div>
+
+               <div class="mt-4">
+                  <p class="font-medium text-stone-800 text-sm mb-1">Learning #4: Constraints Can Lead to Better Solutions</p>
+                  <p class="text-xs text-stone-600">Initially frustrated that we couldn't auto-fetch posts due to API limitations. But reframing manual input as "curation" actually better matches how brands work - they don't care about EVERY influencer post, just the ones featuring their product. This constraint forced me to design for their actual workflow instead of an idealized one.</p>
                </div>
             </div>
 
-            <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-               <h3 class="text-base font-medium text-stone-800 mb-3">Data integrity: duplication prevention</h3>
-               <p class="text-sm text-stone-600 leading-relaxed max-w-3xl">
-                  A CRM fails if contacts duplicate. I designed with an influencer contact model and intake checks so
-                  orders attach to the right influencer across stores.
-               </p>
-
-               <div class="mt-5 ph rounded-xl p-5">
-                  <div class="ph-label mb-2">Placeholder logic artifact</div>
-                  <div class="text-stone-700 text-sm font-medium">Influencer intake flow</div>
-                  <p class="text-stone-500 text-xs mt-1">New order created → check influencer exists → attach or create.
-                  </p>
+            <!-- Decision 3 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft mt-6">
+               <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 3: Sidebar vs Modal vs New Page — Maintaining Context for Comparison</h3>
+               
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-32 flex items-center justify-center">
+                        <div>
+                           <img src="null.png" alt="Floating modal layout" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                     </div>
+                     <p class="text-xs font-medium text-stone-700 mt-2">Floating Modal</p>
+                     <p class="text-xs text-stone-600">Blocks the table, forces repeated closing/opening when comparing multiple influencers</p>
+                  </div>
+                  
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-32 flex items-center justify-center">
+                        <div>
+                           <img src="null.png" alt="New page layout" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                     </div>
+                     <p class="text-xs font-medium text-stone-700 mt-2">New Page</p>
+                     <p class="text-xs text-stone-600">Loses table context entirely, adds navigation friction, breaks comparison flow</p>
+                  </div>
+                  
+                  <div class="text-center">
+                     <div class="ph rounded-xl h-32 flex items-center justify-center">
+                        <div>
+                           <img src="null.png" alt="Sidebar layout" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                     </div>
+                     <p class="text-xs font-medium text-stone-700 mt-2">Sidebar</p>
+                     <p class="text-xs text-stone-600">Keeps table visible, maintains context, allows side-by-side comparison</p>
+                  </div>
                </div>
+
+               <div class="ux-decision-note mb-4">
+                  <p class="text-sm text-stone-600"><strong>Why Sidebar Won:</strong> From PM's customer feedback, I learned brands constantly compare influencers side-by-side ("Let me check if Sarah posted more than Alex"). A sidebar keeps the main table visible while showing post details, preserving this comparison context.</p>
+               </div>
+
+               <div class="mb-4">
+                  <p class="font-medium text-stone-800 text-sm mb-2">Exploration with Intention:</p>
+                  <p class="text-xs text-stone-600 mb-2">I asked three "what if" questions:</p>
+                  <ul class="text-xs text-stone-600 space-y-2">
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">1.</span>
+                        <span><strong>What if brands need to check 10+ influencers in one session?</strong> → Modal would require 20+ close/reopen actions</span>
+                     </li>
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">2.</span>
+                        <span><strong>What if they're comparing engagement rates?</strong> → Need to see multiple influencers simultaneously</span>
+                     </li>
+                     <li class="flex items-start">
+                        <span class="text-stone-400 mr-2">3.</span>
+                        <span><strong>What if we add filters/sorting later?</strong> → Sidebar doesn't break those interactions</span>
+                     </li>
+                  </ul>
+               </div>
+
+               <p class="text-sm text-stone-600 mt-4">
+                  The sidebar approach minimizes context switching while maximizing comparison capability — essential for marketers evaluating influencer performance across multiple dimensions.
+               </p>
             </div>
          </section>
 
          <!-- Design -->
          <section id="design" class="mt-16 sm:mt-20">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Design Showcase</h2>
-            <p class="text-stone-400 text-xs sm:text-sm mb-8 max-w-2xl">
-               Put your strongest screens here in the exact order a recruiter will scroll.
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Design</h2>
+            <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+               The core screens, in the order you'd experience them.
             </p>
 
             <!-- Screen 1 -->
             <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-               <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+               <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
                   <div>
-                     <h3 class="text-lg font-medium text-stone-800">Screen 1: Influencer CRM Table (Phase 1)</h3>
-                     <p class="text-sm text-stone-500 mt-1">The primary decision surface: relationship rollups at a
-                        glance.</p>
-                  </div>
-                  <div class="flex flex-wrap gap-2 text-xs">
-                     <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-600">Identity</span>
-                     <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-600">Social reach</span>
-                     <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-600">Gifts</span>
-                     <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-600">Spend</span>
+                     <h3 class="text-lg font-semibold text-stone-800">CRM Table</h3>
+                     <p class="text-sm text-stone-500 mt-1">The primary view: all influencer relationships at a glance</p>
                   </div>
                </div>
 
-               <div class="mt-5 ph rounded-xl h-80 sm:h-[420px] flex items-center justify-center text-center px-6">
+               <div class="ph rounded-xl h-80 sm:h-[420px] flex items-center justify-center text-center px-6">
                   <div>
-                     <div class="ph-label mb-2">Drop image here</div>
-                     <div class="text-stone-600 text-sm font-medium">Full table screenshot</div>
-                     <p class="text-stone-400 text-xs mt-2">Recommended: no annotations, clean first impression.</p>
+                     <div class="ph-label mb-2">Screenshot</div>
+                     <div class="text-stone-600 text-sm font-medium">Full table view</div>
+                     <p class="text-stone-400 text-xs mt-2">Profile, socials + followers, gifts, spend, posts (Phase 2)</p>
                   </div>
                </div>
 
-               <div class="mt-5 grid md:grid-cols-2 gap-4">
-                  <div class="ph rounded-xl h-52 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Zoomed row with callouts</div>
-                        <p class="text-stone-400 text-xs mt-2">Explain why each column exists.</p>
-                     </div>
+               <div class="mt-5 grid md:grid-cols-4 gap-3 text-sm">
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700">Influencer</p>
+                     <p class="text-stone-500 text-xs mt-1">Photo, name, email — identity at a glance</p>
                   </div>
-                  <div class="ph rounded-xl h-52 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Empty or first-time state</div>
-                        <p class="text-stone-400 text-xs mt-2">Shows maturity and edge-case thinking.</p>
-                     </div>
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700">Socials</p>
+                     <p class="text-stone-500 text-xs mt-1">IG + TikTok handles with follower counts</p>
+                  </div>
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700">Gifts</p>
+                     <p class="text-stone-500 text-xs mt-1">Total orders — relationship depth</p>
+                  </div>
+                  <div class="p-3 bg-stone-50 rounded-lg">
+                     <p class="font-medium text-stone-700">Amount</p>
+                     <p class="text-stone-500 text-xs mt-1">Total spend — investment visibility</p>
                   </div>
                </div>
             </div>
 
             <!-- Screen 2 -->
             <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-               <h3 class="text-lg font-medium text-stone-800">Screen 2: Posts as Progressive Disclosure (Phase 2)</h3>
-               <p class="text-sm text-stone-500 mt-1">Keep the table simple. Reveal detail only when the user asks for
-                  it.</p>
+               <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+                  <div>
+                     <h3 class="text-lg font-semibold text-stone-800">Posts Sidebar</h3>
+                     <p class="text-sm text-stone-500 mt-1">Click the post count → detail slides in without leaving context</p>
+                  </div>
+               </div>
 
-               <div class="mt-5 grid lg:grid-cols-12 gap-4">
-                  <div class="lg:col-span-6 ph rounded-xl h-72 flex items-center justify-center text-center px-6">
+               <div class="grid lg:grid-cols-2 gap-4">
+                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
                      <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Table with clickable posts count</div>
-                        <p class="text-stone-400 text-xs mt-2">Show posts number styled like a link.</p>
+                        <div class="ph-label mb-2">Screenshot</div>
+                        <div class="text-stone-600 text-sm font-medium">Table with posts column</div>
+                        <p class="text-stone-400 text-xs mt-1">Number styled as a link — invites interaction</p>
                      </div>
                   </div>
-                  <div class="lg:col-span-6 ph rounded-xl h-72 flex items-center justify-center text-center px-6">
+                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
                      <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Side panel open with posts + metrics</div>
-                        <p class="text-stone-400 text-xs mt-2">Include likes, comments, views, shares where relevant.
-                        </p>
+                        <div class="ph-label mb-2">Screenshot</div>
+                        <div class="text-stone-600 text-sm font-medium">Sidebar open</div>
+                        <p class="text-stone-400 text-xs mt-1">Post thumbnails, platform, likes, comments, date</p>
                      </div>
                   </div>
                </div>
+
+               <p class="mt-5 text-sm text-stone-600 leading-relaxed">
+                  <strong class="text-stone-800">Why a sidebar, not a modal:</strong> Brands often compare influencers side-by-side. A sidebar keeps the table visible so users maintain context while reviewing posts.
+               </p>
             </div>
 
             <!-- Screen 3 -->
             <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-               <h3 class="text-lg font-medium text-stone-800">Screen 3: Add Post Flow</h3>
-               <p class="text-sm text-stone-500 mt-1">Low-friction input that maps to how marketers already work.</p>
+               <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+                  <div>
+                     <h3 class="text-lg font-semibold text-stone-800">Add Post Flow</h3>
+                     <p class="text-sm text-stone-500 mt-1">Paste a URL. System does the rest.</p>
+                  </div>
+               </div>
 
-               <div class="mt-5 grid md:grid-cols-2 gap-4">
-                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
+               <div class="grid md:grid-cols-2 gap-4">
+                  <div class="ph rounded-xl h-64 flex items-center justify-center text-center px-6">
                      <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Add post modal (URL + platform)</div>
-                        <p class="text-stone-400 text-xs mt-2">Show the minimal fields required.</p>
+                        <div class="ph-label mb-2">Screenshot</div>
+                        <div class="text-stone-600 text-sm font-medium">Add post modal</div>
+                        <p class="text-stone-400 text-xs mt-1">Platform selector + URL input</p>
                      </div>
                   </div>
-                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
+                  <div class="ph rounded-xl h-64 flex items-center justify-center text-center px-6">
                      <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Preview state after URL paste</div>
-                        <p class="text-stone-400 text-xs mt-2">Optional but strong for credibility.</p>
+                        <div class="ph-label mb-2">Screenshot</div>
+                        <div class="text-stone-600 text-sm font-medium">Preview state</div>
+                        <p class="text-stone-400 text-xs mt-1">Thumbnail + confirmation before save</p>
                      </div>
                   </div>
                </div>
-            </div>
 
-            <!-- System artifacts -->
-            <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-               <h3 class="text-lg font-medium text-stone-800">System Thinking Artifacts</h3>
-               <p class="text-sm text-stone-500 mt-1">One diagram and one flow are enough. Do not over-document.</p>
-
-               <div class="mt-5 grid md:grid-cols-2 gap-4">
-                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Data model diagram</div>
-                        <p class="text-stone-400 text-xs mt-2">Influencer contact with Orders and Posts attached.</p>
-                     </div>
-                  </div>
-                  <div class="ph rounded-xl h-72 flex items-center justify-center text-center px-6">
-                     <div>
-                        <div class="ph-label mb-2">Drop image here</div>
-                        <div class="text-stone-600 text-sm font-medium">Intake and dedupe logic flow</div>
-                        <p class="text-stone-400 text-xs mt-2">New order → find influencer → attach or create.</p>
-                     </div>
-                  </div>
-               </div>
+               <p class="mt-5 text-sm text-stone-600 leading-relaxed">
+                  <strong class="text-stone-800">Designed for how marketers already work:</strong> They're copying post links from Instagram and TikTok constantly. This flow meets them where they are — no manual metric entry, no extra steps.
+               </p>
             </div>
          </section>
 
          <!-- Reflection -->
          <section id="reflection" class="mt-16 sm:mt-20">
             <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Reflection</h2>
-            <p class="text-stone-400 text-xs sm:text-sm mb-8 max-w-2xl">
-               Keep this practical. Hiring managers want to see judgment and tradeoffs.
+            <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+               What I learned, and where this could go next.
             </p>
 
             <div class="grid lg:grid-cols-12 gap-6">
                <div class="lg:col-span-7 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">What I learned</h3>
-                  <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-2">
-                     <li>Most “feature requests” are really data-model problems in disguise.</li>
-                     <li>Progressive disclosure keeps power features from overwhelming the default workflow.</li>
-                     <li>Trust in CRM data depends on preventing duplication more than adding fields.</li>
-                  </ul>
+                  <h3 class="text-base font-semibold text-stone-800 mb-4">What I learned</h3>
 
-                  <h3 class="text-base font-medium text-stone-800 mt-6 mb-3">What I would do next</h3>
-                  <ul class="text-sm text-stone-600 leading-relaxed list-disc pl-5 space-y-2">
-                     <li>Add tagging and notes to capture relationship context.</li>
-                     <li>Introduce segmentation (top spend, high post rate, high engagement).</li>
-                     <li>Design basic filters and sorting as the list grows.</li>
-                     <li>Define fallback behavior when scraping fails.</li>
-                  </ul>
-               </div>
-
-               <div class="lg:col-span-5 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
-                  <h3 class="text-base font-medium text-stone-800 mb-3">Outcome</h3>
-                  <p class="text-sm text-stone-600 leading-relaxed">
-                     Delivered an interactive CRM concept in Figma to support customer demos and provide a realistic
-                     phased direction for implementation.
-                  </p>
-
-                  <div class="mt-5 ph rounded-xl h-56 flex items-center justify-center text-center px-6">
+                  <div class="space-y-6">
                      <div>
-                        <div class="ph-label mb-2">Placeholder</div>
-                        <div class="text-stone-600 text-sm font-medium">Customer demo image or testimonial</div>
-                        <p class="text-stone-400 text-xs mt-2">Optional: a short quote or a metric if you have one.</p>
+                        <p class="font-medium text-stone-800">Testing at real scale reveals hidden problems.</p>
+                        <p class="text-sm text-stone-600 mt-2">My initial card design looked great with 5-10 sample influencers. But when I populated it with 50+ records (actual data from our brands), it completely fell apart. This taught me to always test at realistic scale early in the design process - visual appeal at small scale doesn't predict usability at real-world scale.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Tables aren't exciting, but they solve the problem.</p>
+                        <p class="text-sm text-stone-600 mt-2">I started with cards because they looked more modern and visually interesting. But after learning that comparison is the primary use case, tables were the obvious choice. Sometimes the simplest solution is the right solution.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Familiarity accelerates adoption.</p>
+                        <p class="text-sm text-stone-600 mt-2">By using a table layout that mirrors how brands already track influencers in spreadsheets, we eliminated the need for any onboarding or training. The interface was instantly intuitive because it matched their existing mental model.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Constraints force better thinking.</p>
+                        <p class="text-sm text-stone-600 mt-2">Frustrated at first that we couldn't auto-fetch social posts, I reframed it: what if manual input is actually better? Brands don't need to see every post - just the ones with their product. This "limitation" became a curation feature that matches their actual workflow.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">The real work often happens before the first pixel.</p>
+                        <p class="text-sm text-stone-600 mt-2">"Build a CRM" sounded like a UI challenge, but the real problem was data architecture: influencers didn't exist as objects in our system. Designing the contact model and deduplication logic was foundational work that made the UI straightforward.</p>
                      </div>
                   </div>
+               </div>
 
-                  <div class="mt-5 flex flex-wrap gap-2">
-                     <a href="mailto:fu.shih@northeastern.edu"
-                        class="inline-flex items-center gap-2 bg-stone-800 text-white px-4 py-2 rounded-full text-xs hover:bg-stone-700">Contact</a>
-                     <a href="index.html#work"
-                        class="inline-flex items-center gap-2 border border-stone-200 bg-white px-4 py-2 rounded-full text-xs text-stone-600 hover:bg-stone-50">Back
-                        to work</a>
+               <div class="lg:col-span-5 space-y-6">
+                  <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                     <h3 class="text-base font-semibold text-stone-800 mb-4">What I'd explore next</h3>
+                     <ul class="text-sm text-stone-600 leading-relaxed space-y-2">
+                        <li class="flex items-start">
+                           <span class="text-stone-400 mr-2">•</span>
+                           <span><strong>Advanced filtering</strong> by engagement rate, last gifted date, or content type</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-stone-400 mr-2">•</span>
+                           <span><strong>Relationship tagging</strong> for notes, follow-ups, and campaign grouping</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-stone-400 mr-2">•</span>
+                           <span><strong>Performance dashboards</strong> with aggregate metrics across all influencers</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-stone-400 mr-2">•</span>
+                           <span><strong>Automated post detection</strong> via social media APIs when resources allow</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-stone-400 mr-2">•</span>
+                           <span><strong>Export functionality</strong> for reports and external analysis</span>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                     <h3 class="text-base font-semibold text-stone-800 mb-3">Outcome & Impact</h3>
+                     <p class="text-sm text-stone-600 leading-relaxed">
+                        Delivered a fully functional, coded prototype that transformed scattered order data into a cohesive influencer relationship dashboard. The design consolidated what was previously tracked across multiple spreadsheets into a single source of truth.
+                     </p>
+                     <div class="mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-xs font-medium text-emerald-800">The prototype is actively being used</p>
+                        <p class="text-xs text-emerald-700 mt-1">In customer demos to validate the CRM concept and gather feedback for development prioritization.</p>
+                     </div>
                   </div>
                </div>
             </div>
@@ -457,20 +684,19 @@
          <footer class="mt-20 pt-10 border-t border-stone-200">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                <div>
-                  <p class="text-stone-400 text-sm mb-1">Let’s work together</p>
+                  <p class="text-stone-400 text-sm mb-1">Let's work together</p>
                   <a href="mailto:fu.shih@northeastern.edu"
                      class="text-stone-800 hover:text-stone-500">fu.shih@northeastern.edu</a>
                </div>
                <div class="flex gap-6 text-sm text-stone-400">
                   <a href="https://linkedin.com/in/shihjufu" target="_blank" class="hover:text-stone-600"
                      rel="noreferrer">LinkedIn</a>
-                  <a href="#" class="hover:text-stone-600">Resume</a>
+                  <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view" target="_blank" class="hover:text-stone-600">Resume</a>
                </div>
             </div>
-            <p class="mt-10 text-stone-300 text-sm italic text-center">Great design is always hidden in plain sight.</p>
+            <p class="mt-12 text-stone-300 text-sm italic text-center">Great design is always hidden in plain sight.</p>
          </footer>
       </div>
    </main>
 </body>
-
 </html>
