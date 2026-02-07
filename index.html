@@ -94,8 +94,15 @@
 
 <body>
    <div id="root"></div>
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
    <script type="text/babel">
       const { useState, useRef, useEffect, useMemo, createContext, useContext } = React;
+
+      const SUPABASE_URL = "https://hnrhlujoetiadwrblshu.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhucmhsdWpvZXRpYWR3cmJsc2h1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0MzQxMjMsImV4cCI6MjA4NjAxMDEyM30.rG46NpPKD2Vb_2AxYFHFe32Nh0rJ7HJEbBxcEq5jkhg";
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
       const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
       const TooltipContext = createContext({ showTouchTooltips: false, tooltipFading: false, tooltipPetalId: null, tooltipLeafId: null });
 
@@ -323,24 +330,32 @@
          const gardenRef = useRef(null);
 
          useEffect(() => {
-            async function load() {
-               try {
-                  const result = await window.storage.list('dflower:', true);
-                  if (result && result.keys) {
-                     const loaded = [];
-                     for (const key of result.keys.slice(0, 50)) {
-                        try {
-                           const data = await window.storage.get(key, true);
-                           if (data && data.value) loaded.push(JSON.parse(data.value));
-                        } catch (e) { }
-                     }
-                     setFlowers(loaded);
-                  }
-               } catch (e) { }
-               setLoading(false);
-            }
-            load();
-         }, []);
+  async function load() {
+    try {
+      const { data, error } = await supabase
+        .from("flowers")
+        .select("id,drawing,message,x,y,planted_at")
+        .order("planted_at", { ascending: false })
+        .limit(200);
+
+      if (!error && data) {
+        setFlowers(
+          data.map((r) => ({
+            id: r.id,
+            drawing: r.drawing,
+            message: r.message,
+            x: r.x,
+            y: r.y,
+            plantedAt: r.planted_at,
+          }))
+        );
+      }
+    } catch (e) {}
+    setLoading(false);
+  }
+  load();
+}, []);
+
 
          function handleSave(dataUrl, msg) {
             setPendingDrawing(dataUrl);
@@ -348,7 +363,7 @@
             setShowDrawing(false);
          }
 
-         function plantFlower(e) {
+         async function plantFlower(e) {
             if (!gardenRef.current || !pendingDrawing) return;
             const rect = gardenRef.current.getBoundingClientRect();
             const clientX = e.clientX !== undefined ? e.clientX : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : null);
@@ -365,7 +380,14 @@
                plantedAt: new Date().toISOString()
             };
             try {
-               window.storage.set('dflower:' + flower.id, JSON.stringify(flower), true);
+               await supabase.from("flowers").insert([{
+               id: flower.id,
+               drawing: flower.drawing,
+               message: flower.message,
+               x: flower.x,
+               y: flower.y,
+               planted_at: new Date().toISOString(),
+            }]);
             } catch (e) { }
             setFlowers(function (prev) { return prev.concat([flower]); });
             setPendingDrawing(null);
