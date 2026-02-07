@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Influencer Gift Form Template System Case Study</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+      :root {
+         --bg: #FAF9F6;
+      }
+
+      body {
+         background: var(--bg);
+      }
+
+      .shadow-soft {
+         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      }
+
+      .kbd {
+         border: 1px solid rgba(120, 113, 108, 0.25);
+         background: rgba(255, 255, 255, 0.7);
+         border-radius: 10px;
+         padding: 2px 8px;
+         font-size: 12px;
+         color: rgb(87, 83, 78);
+      }
+
+      .insight-card {
+         border-left: 3px solid rgb(34, 197, 94);
+         background: rgba(34, 197, 94, 0.04);
+      }
+
+      .constraint-card {
+         border-left: 3px solid rgb(245, 158, 11);
+         background: rgba(245, 158, 11, 0.04);
+      }
+
+      .ux-decision-note {
+         background: rgba(59, 130, 246, 0.05);
+         border-left: 3px solid rgb(59, 130, 246);
+         padding: 12px 16px;
+         margin: 16px 0;
+         border-radius: 0 8px 8px 0;
+      }
+
+      .quote-card {
+         background: rgba(120, 113, 108, 0.04);
+         border-left: 3px solid rgb(120, 113, 108);
+         padding: 16px;
+         border-radius: 0 8px 8px 0;
+      }
+   </style>
+</head>
+
+<body class="text-stone-800">
+   <!-- Top nav -->
+   <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-16 py-4 sm:py-6"
+      style="background: rgba(250,249,246,0.9); backdrop-filter: blur(12px);">
+      <div class="flex items-center justify-between">
+         <a href="index.html" class="text-stone-800 font-medium text-sm sm:text-base">Juju</a>
+         <div class="flex items-center gap-4 sm:gap-8 text-xs sm:text-sm text-stone-400">
+            <a href="index.html#work" class="hover:text-stone-700">Work</a>
+            <a href="visuals.html" class="hover:text-stone-700">Visuals</a>
+            <a href="index.html#about" class="hover:text-stone-700">About</a>
+         </div>
+      </div>
+   </nav>
+   
+   <!-- Page -->
+   <main class="pt-24 sm:pt-28 md:pt-32 pb-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 md:px-16">
+         
+         <!-- Hero -->
+         <header class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+            <div class="lg:col-span-12 max-w-4xl">
+               <p class="text-stone-400 text-sm sm:text-base mb-3">Case Study</p>
+
+               <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight">
+                  Influencer Gift Form Template System
+                  <span class="block text-stone-400 mt-2">Making the brand’s first touchpoint feel premium, at scale</span>
+               </h1>
+
+               <p class="mt-4 sm:mt-6 text-stone-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+                  We needed a scalable way to make forms feel on-brand without exploding engineering scope. Because we could only build two templates, I created a typography-first system (sans vs serif) that covers about 95% of brand styles, while keeping accessibility consistent and maintainable. Delivered in 3 weeks, cut customization tickets 60%, and reduced form setup time about 50%. 
+               </p>
+
+               <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+                     style="background: rgba(34,197,94,0.12); color: rgb(21,128,61);">B2B SaaS</span>
+                  <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+                     style="background: rgba(59,130,246,0.12); color: rgb(29,78,216);">Shopify App</span>
+               </div>
+
+               <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-stone-500">
+                  <span class="kbd">Role: Product Designer</span>
+                  <span class="kbd">Timeline: 3 weeks</span>
+                  <span class="kbd">Team: PM/Engineer + Me</span>
+                  <span class="kbd">Status: Shipped</span>
+               </div>
+            </div>
+         </header>
+
+         <!-- Hero visuals -->
+
+<div class="mt-12 grid md:grid-cols-2 gap-6 items-start">
+   <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+      <div class="p-4">
+         <p class="text-xs font-semibold text-stone-500 mb-2">Template 1: POP (Sans-Serif)</p>
+         <div class="rounded-xl overflow-hidden">
+            <img src="igfform_png/popsips.png" alt="PopSips Form Screenshot - POP Template" class="w-full h-auto">
+         </div>
+      </div>
+   </div>
+   <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+      <div class="p-4">
+         <p class="text-xs font-semibold text-stone-500 mb-2">Template 2: LUXE (Serif)</p>
+         <div class="rounded-xl overflow-hidden">
+            <img src="igfform_png/sixstories.png" alt="Six Stories Form Screenshot - LUXE Template" class="w-full h-auto">
+         </div>
+      </div>
+   </div>
+</div>
+
+         <!-- Impact -->
+         <section class="mt-14">
+            <div class="insight-card rounded-2xl p-6">
+               <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Impact</p>
+               <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                     <p class="text-2xl font-semibold text-stone-800">100%</p>
+                     <p class="text-sm text-stone-600 mt-1">Template adoption (POP or LUXE)</p>
+                  </div>
+                  <div>
+                     <p class="text-2xl font-semibold text-stone-800">60%</p>
+                     <p class="text-sm text-stone-600 mt-1">Reduction in "customization" support tickets</p>
+                  </div>
+                  <div>
+                     <p class="text-2xl font-semibold text-stone-800">~50%</p>
+                     <p class="text-sm text-stone-600 mt-1">Faster form creation (15-20 min → 5-10 min)</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- The Problem -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">The Problem</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  <strong class="text-stone-800">The Context:</strong> Influencer Gift Form is a Shopify app that creates customized forms for influencer gifting and seeding. These forms are the first touchpoint between brands and influencers—the digital equivalent of product packaging.
+               </p>
+
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  But we had a problem. Brands were submitting support tickets saying:
+               </p>
+
+               <div class="grid md:grid-cols-3 gap-4 mb-6">
+                  <div class="quote-card">
+                     <p class="text-sm text-stone-700">"Can you allow us to customize it more?"</p>
+                  </div>
+                  <div class="quote-card">
+                     <p class="text-sm text-stone-700">"It could be more branded"</p>
+                  </div>
+                  <div class="quote-card">
+                     <p class="text-sm text-stone-700">"The forms don't look like our brand"</p>
+                  </div>
+               </div>
+
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  <strong class="text-stone-800">The Business Reality:</strong> Our PM was direct about the issue:
+               </p>
+
+               <div class="p-4 bg-stone-50 rounded-lg mb-4">
+                  <p class="text-sm text-stone-700 italic">"I have improved the UI/UX substantially over the last year. But the truth is it's not 'beautiful.' I still get feedback now and then it could be improved, or more 'branded' so to speak. I don't know exactly what that means. End of the day it's a form right, but I guess it could be nicer."</p>
+               </div>
+
+               <p class="text-sm text-stone-600 leading-relaxed">
+                  <strong class="text-stone-800">Why This Matters:</strong> For brands investing in influencer relationships, first impressions are everything. A generic form communicates "you're just a number." A branded form communicates "we value this relationship."
+               </p>
+            </div>
+         </section>
+
+         <!-- Strategic Tension -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">The Strategic Tension</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 shadow-soft">
+               <p class="text-sm text-stone-600 mb-8">Before jumping to solutions, I needed to understand the core design challenge: finding the balance between creative freedom and quality outcomes.</p>
+
+               <div class="rounded-xl overflow-hidden border border-stone-200">
+                  <img src="igfform_png/venndiagram.png" alt="Strategic tension: too little customization vs sweet spot vs too much customization" class="w-full">
+               </div>
+
+               <div class="mt-6 constraint-card rounded-lg p-4">
+                  <p class="text-xs font-semibold text-amber-800 mb-2">The Critical Insight</p>
+                  <p class="text-sm text-stone-700">Too much customization is particularly dangerous because most Shopify brands are indie/small brands <strong>without in-house designers</strong>. Giving them unlimited control doesn't empower them—it overwhelms them and leads to poor results. Our solution needed to prevent bad outcomes while enabling good ones.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- User Personas -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Who We're Designing For</h2>
+            
+            <p class="text-sm text-stone-600 mb-8">Our users span different levels of design capability and time constraints. Understanding these two core personas shaped every design decision.</p>
+
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <div class="grid md:grid-cols-2 gap-6">
+                  <!-- Persona 1 -->
+                  <div class="p-5 bg-blue-50 rounded-xl border border-blue-100">
+                     <div class="flex items-start gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center text-blue-700 font-semibold">S</div>
+                        <div>
+                           <h3 class="font-semibold text-stone-800">Sarah — The Solo Founder</h3>
+                           <p class="text-xs text-stone-500">~60% of users</p>
+                        </div>
+                     </div>
+                     
+                     <div class="space-y-3 text-sm">
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Profile</p>
+                           <p class="text-xs text-stone-600">No design background, uses Canva, wears all hats, limited time</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Goals</p>
+                           <p class="text-xs text-stone-600">Professional look in <15 min, match Instagram aesthetic</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Pain Points</p>
+                           <p class="text-xs text-stone-600">Doesn't know what fonts go together, forms look cheap vs packaging</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Jobs to Be Done</p>
+                           <p class="text-xs text-stone-600 italic">"I want forms to feel like my brand extension without spending hours"</p>
+                        </div>
+                        <div class="pt-2 border-t border-blue-200">
+                           <p class="text-xs font-semibold text-blue-800">How We Serve</p>
+                           <p class="text-xs text-stone-600">Pick template → Upload logo → Adjust colors → Done in 5 min</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Persona 2 -->
+                  <div class="p-5 bg-purple-50 rounded-xl border border-purple-100">
+                     <div class="flex items-start gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-200 flex items-center justify-center text-purple-700 font-semibold">M</div>
+                        <div>
+                           <h3 class="font-semibold text-stone-800">Marcus — The High-Volume Operator</h3>
+                           <p class="text-xs text-stone-500">~40% of users</p>
+                        </div>
+                     </div>
+                     
+                     <div class="space-y-3 text-sm">
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Profile</p>
+                           <p class="text-xs text-stone-600">Growth marketer or brand manager running 10-15 influencer campaigns/quarter, has brand guidelines to follow but no CSS/design skills</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Goals</p>
+                           <p class="text-xs text-stone-600">Match exact brand colors, adjust spacing to fit product imagery, create multiple campaign variants quickly</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Pain Points</p>
+                           <p class="text-xs text-stone-600">Forms don't match website precisely, needs to A/B test form styles, creating 5 forms for different product lines is time-consuming</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Jobs to Be Done</p>
+                           <p class="text-xs text-stone-600 italic">"I need pixel-accurate brand consistency across 10 forms without bothering the design team every time"</p>
+                        </div>
+                        <div class="pt-2 border-t border-purple-200">
+                           <p class="text-xs font-semibold text-purple-800">How We Serve</p>
+                           <p class="text-xs text-stone-600">Guided controls: hex color inputs, logo sizing sliders, spacing presets (compact/standard/spacious), button corner radius options. Create 3 on-brand variants in 30 min.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="mt-8 ux-decision-note">
+               <p class="text-sm text-stone-700"><strong>The Design Challenge:</strong></p>
+               <p class="text-sm text-stone-600 mt-2">Most design tools solve for ONE persona. Canva serves Sarah well but frustrates high-volume operators. Professional tools empower experts but overwhelm solo founders. Our template system with guided customization needed to serve BOTH simultaneously:</p>
+               <ul class="text-sm text-stone-600 mt-2 space-y-1 ml-4">
+                  <li>• Sarah gets instant professional results (Quick Setup)</li>
+                  <li>• Marcus gets precise brand control through guided options (Brand Precision)</li>
+               </ul>
+               <p class="text-sm text-stone-600 mt-2">This is why "2 templates with deep guided customization" works—it's not about template COUNT, it's about customization DEPTH with smart guardrails at multiple skill levels.</p>
+            </div>
+         </section>
+
+         <!-- Exploration: 3 Approaches -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Exploration: 3 Approaches Considered</h2>
+            
+            <p class="text-sm text-stone-600 mb-6">With the strategic tension and user needs defined, I explored three fundamentally different approaches to solve the "more branded" problem:</p>
+
+            <div class="space-y-6">
+               <!-- Approach A -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <div class="flex items-start justify-between mb-4">
+                     <div>
+                        <h3 class="text-base font-semibold text-stone-800">Approach A: Full Drag-and-Drop Builder</h3>
+                        <p class="text-sm text-stone-500 mt-1">Like Canva, but for gift forms</p>
+                     </div>
+                     <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">✗ Rejected</span>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-4">
+                     <div>
+                        <p class="text-xs font-semibold text-stone-700 mb-2">Pros</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• Maximum flexibility for all users</li>
+                           <li>• Could handle any brand aesthetic</li>
+                           <li>• No template limitations</li>
+                        </ul>
+                     </div>
+                     <div>
+                        <p class="text-xs font-semibold text-red-700 mb-2">Cons</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• 6+ months engineering complexity</li>
+                           <li>• Overwhelming for indie brands</li>
+                           <li>• Hard to guarantee accessibility</li>
+                           <li>• Mental model: 12 min avg to create form</li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="mt-4 p-3 bg-red-50 rounded-lg border border-red-100">
+                     <p class="text-xs font-semibold text-red-800 mb-1">Why Rejected</p>
+                     <p class="text-xs text-stone-600">Wrong tool for the user base. Sarah doesn't want to "design" a form—she wants to look professional fast. Engineering complexity would delay shipping by 6+ months for a solution that solves Marcus's needs but overwhelms Sarah.</p>
+                  </div>
+               </div>
+
+               <!-- Approach B -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <div class="flex items-start justify-between mb-4">
+                     <div>
+                        <h3 class="text-base font-semibold text-stone-800">Approach B: More Color/Font Pickers</h3>
+                        <p class="text-sm text-stone-500 mt-1">Expand existing customization options</p>
+                     </div>
+                     <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">✗ Rejected</span>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-4">
+                     <div>
+                        <p class="text-xs font-semibold text-stone-700 mb-2">Pros</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• Easy to implement</li>
+                           <li>• Familiar pattern (color pickers exist)</li>
+                           <li>• Fast to ship</li>
+                        </ul>
+                     </div>
+                     <div>
+                        <p class="text-xs font-semibold text-red-700 mb-2">Cons</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• Doesn't solve "I don't know what looks good" problem</li>
+                           <li>• Still requires design knowledge</li>
+                           <li>• Mental model: 60% said "too many decisions"</li>
+                           <li>• Doesn't address core pain point</li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="mt-4 p-3 bg-red-50 rounded-lg border border-red-100">
+                     <p class="text-xs font-semibold text-red-800 mb-1">Why Rejected</p>
+                     <p class="text-xs text-stone-600">Doesn't address the core problem. Brands don't need MORE options—they need a professional starting point. Adding font pickers would increase decision paralysis without guaranteeing good results.</p>
+                  </div>
+               </div>
+
+               <!-- Approach C -->
+               <div class="bg-white rounded-2xl border border-emerald-200 p-6 shadow-soft">
+                  <div class="flex items-start justify-between mb-4">
+                     <div>
+                        <h3 class="text-base font-semibold text-stone-800">Approach C: Template System with Progressive Disclosure</h3>
+                        <p class="text-sm text-stone-500 mt-1">Typography-based foundations + deep customization layers</p>
+                     </div>
+                     <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">✓ Selected</span>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-4">
+                     <div>
+                        <p class="text-xs font-semibold text-emerald-700 mb-2">Pros</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• Fast for beginners (instant professional look)</li>
+                           <li>• Flexible for advanced users (customization layers)</li>
+                           <li>• Accessibility baked into templates</li>
+                           <li>• Inspired by successful patterns (Linktree, Canva)</li>
+                        </ul>
+                     </div>
+                     <div>
+                        <p class="text-xs font-semibold text-amber-700 mb-2">Trade-offs</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• Templates could feel restrictive</li>
+                           <li>• Requires careful template design</li>
+                           <li>• Only works if we pick the right foundations</li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                     <p class="text-xs font-semibold text-emerald-800 mb-1">Why Selected</p>
+                     <p class="text-xs text-stone-600">Best balance of speed & control. Gives indie brands instant professional results while allowing marketers to customize deeply. This was the only approach that served BOTH personas effectively.</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="mt-6 ux-decision-note">
+               <p class="text-sm text-stone-700"><strong>🎯 Decision Point #1: Which Fundamental Approach?</strong></p>
+               <p class="text-sm text-stone-600 mt-2">I had to choose between three philosophically different solutions. Drag-and-drop = maximum flexibility but overwhelming. More pickers = easy to build but doesn't solve the real problem. Templates = requires us to get the foundations right, but IF we do, it serves both personas. The template approach was the riskiest bet—but the only one with potential to truly solve the problem.</p>
+            </div>
+         </section>
+
+         <!-- The Constraint -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">The Constraint: How Many Templates?</h2>
+            
+            <div class="constraint-card rounded-2xl p-6">
+               <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-3">⚠️ Engineering Reality Check</p>
+               
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  <strong class="text-stone-800">Now that I'd chosen the template approach, I needed to decide: how many templates?</strong> My initial instinct was to build multiple templates covering different brand archetypes (modern, bold, luxury, organic, tech, classic)—somewhere in the range of 4-6 templates.
+               </p>
+
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  <strong class="text-stone-800">Engineering pushback:</strong>
+               </p>
+
+               <div class="p-4 bg-white rounded-lg mb-4">
+                  <p class="text-sm text-stone-700">"Each template adds significant complexity to our pipeline:</p>
+                  <ul class="text-sm text-stone-700 mt-2 space-y-1 ml-4">
+                     <li>• 6x the QA testing for each update</li>
+                     <li>• 6x the maintenance burden</li>
+                     <li>• 6x the edge cases to handle</li>
+                     <li>• 4+ month timeline</li>
+                  </ul>
+                  <p class="text-sm text-stone-700 mt-2">We need to ship faster. Can we start with 2 templates and validate the approach?"</p>
+               </div>
+
+               <div class="ux-decision-note">
+                  <p class="text-sm text-stone-700"><strong>The Question This Forced:</strong></p>
+                  <p class="text-base text-stone-800 mt-1 font-medium">What's the MINIMUM number of templates that serves the MAXIMUM number of brands?</p>
+               </div>
+
+               <p class="text-sm text-stone-600 leading-relaxed mt-4">
+                  Instead of fighting the constraint, I reframed it as a design problem: What's the core dimension that differentiates brand identities? If I could find that, maybe 2 templates could work.
+               </p>
+            </div>
+
+            <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Additional Constraint</p>
+               <p class="text-sm text-stone-600 leading-relaxed">
+                  <strong class="text-stone-800">The original accessibility concern:</strong> Our PM/Engineer noted: "The reason I didn't allow so much customization in the beginning was for accessibility."
+               </p>
+               <p class="text-sm text-stone-600 leading-relaxed mt-3">
+                  This became a core design principle: <strong>How do we enable customization WITHOUT enabling accessibility violations?</strong>
+               </p>
+            </div>
+         </section>
+
+         <!-- Research -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Research & Insight: The Typography Hypothesis</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Week 1: Informal Analysis</p>
+               
+               <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                  To answer "what's the minimum number of templates," I needed to understand what actually differentiates brand identities. With limited time, I conducted informal research:
+               </p>
+
+               <ul class="text-sm text-stone-700 space-y-2 mb-6">
+                  <li class="flex items-start">
+                     <span class="text-stone-400 mr-2">•</span>
+                     <span>Reviewed gift forms from 20-25 existing customers</span>
+                  </li>
+                  <li class="flex items-start">
+                     <span class="text-stone-400 mr-2">•</span>
+                     <span>Looked at their brand websites and Instagram profiles</span>
+                  </li>
+                  <li class="flex items-start">
+                     <span class="text-stone-400 mr-2">•</span>
+                     <span>Categorized by visual style and brand positioning</span>
+                  </li>
+                  <li class="flex items-start">
+                     <span class="text-stone-400 mr-2">•</span>
+                     <span>Looked for patterns in what makes brands feel different</span>
+                  </li>
+               </ul>
+
+               <div class="insight-card rounded-2xl p-5">
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">The Pattern</p>
+                  <p class="text-sm text-stone-700 font-medium mb-3">Despite variety in colors, layouts, and imagery, most brands fell into TWO typographic directions:</p>
+                  
+                  <div class="grid md:grid-cols-2 gap-4">
+                     <div class="p-4 bg-white rounded-lg">
+                        <p class="font-semibold text-stone-800 mb-2">Sans-Serif (~70%)</p>
+                        <p class="text-xs text-stone-600 mb-2">Modern • Energetic • Accessible</p>
+                        <p class="text-xs text-stone-600">DTC brands, beverages, wellness, beauty, streetwear</p>
+                     </div>
+                     <div class="p-4 bg-white rounded-lg">
+                        <p class="font-semibold text-stone-800 mb-2">Serif (~30%)</p>
+                        <p class="text-xs text-stone-600 mb-2">Classic • Refined • Luxurious</p>
+                        <p class="text-xs text-stone-600">Fashion, jewelry, luxury goods, traditional brands</p>
+                     </div>
+                  </div>
+
+                  <p class="text-sm text-stone-600 mt-4">Only ~5% fell outside these categories (ultra-minimal, high-fashion editorial, niche aesthetics)</p>
+               </div>
+            </div>
+
+            <div class="mt-6 ux-decision-note">
+               <p class="text-sm text-stone-700"><strong>🎯 Decision Point #2: Can 2 Templates Actually Work?</strong></p>
+               <p class="text-sm text-stone-600 mt-2">The typography insight gave me confidence: if 95% of brands fall into sans vs. serif, then 2 templates COULD serve most brands—IF we build deep customization within each. This was the riskiest decision: betting that typography psychology + deep customization could replace 4-6 templates. Trade-off accepted: Speed to market + hypothesis validation vs. guaranteed coverage.</p>
+            </div>
+
+            <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">The Typography Psychology Hypothesis</p>
+               <p class="text-sm text-stone-600 mb-3">Brand personality is primarily communicated through typography direction. If we build TWO excellent typographic foundations with DEEP customization options, we can serve 95% of brands.</p>
+               
+               <p class="text-sm text-stone-700 font-medium">The bet: Depth over breadth.</p>
+            </div>
+         </section>
+
+         <!-- Linktree Inspiration -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Learning from Linktree</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-sm text-stone-600 mb-6">While researching how other tools handle customization for non-designers, Linktree's approach stood out as a successful model worth studying.</p>
+
+               <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                     <p class="font-semibold text-stone-800 mb-3">What Linktree Does Well</p>
+                     <ul class="text-sm text-stone-600 space-y-2">
+                        <li class="flex items-start">
+                           <span class="text-emerald-600 mr-2">✓</span>
+                           <span><strong>Templates reduce decision fatigue</strong> — Pre-designed starting points eliminate the blank canvas problem</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-emerald-600 mr-2">✓</span>
+                           <span><strong>Visual previews make selection fast</strong> — See what you're getting before committing</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-emerald-600 mr-2">✓</span>
+                           <span><strong>Customization is progressive</strong> — Basic to advanced layers</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-emerald-600 mr-2">✓</span>
+                           <span><strong>Non-designers create professional results</strong> — Smart defaults ensure quality</span>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <p class="font-semibold text-stone-800 mb-3">What I Adapted for Gift Forms</p>
+                     <ul class="text-sm text-stone-600 space-y-2">
+                        <li class="flex items-start">
+                           <span class="text-blue-600 mr-2">→</span>
+                           <span><strong>Template-first approach</strong> — But focused on typography instead of visual themes</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-blue-600 mr-2">→</span>
+                           <span><strong>Progressive disclosure</strong> — 3 levels: template → colors → advanced</span>
+                        </li>
+                        <li class="flex items-start">
+                           <span class="text-blue-600 mr-2">→</span>
+                           <span><strong>Smart defaults</strong> — Everything looks good immediately</span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-100">
+                  <p class="text-xs font-semibold text-amber-800 mb-2">Key Difference: Personal Brand vs. Established Brand</p>
+                  <p class="text-sm text-stone-600 mb-2">Linktree optimizes for <strong>personal brand expression</strong> (creators building their identity).</p>
+                  <p class="text-sm text-stone-600">Gift forms need to represent <strong>established brand identity</strong> (brands with existing guidelines).</p>
+                  <p class="text-sm text-stone-700 mt-3 font-medium">This meant I needed:</p>
+                  <ul class="text-xs text-stone-600 mt-2 space-y-1 ml-4">
+                     <li>• More emphasis on logo integration and brand color systems</li>
+                     <li>• Stricter typography options (can't let brands use comic sans)</li>
+                     <li>• Built-in accessibility guardrails (brands serve public audiences)</li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+
+         <!-- The Decision -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">The Final Decision: 2 Templates</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                     <h3 class="text-base font-semibold text-stone-800 mb-3">Template 1: POP</h3>
+                     <p class="text-sm text-stone-600 mb-3">Sans-serif foundation</p>
+                     
+                     <div class="space-y-3">
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Typography</p>
+                           <p class="text-xs text-stone-600">Montserrat (headings) + Inter (body)</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Personality</p>
+                           <p class="text-xs text-stone-600">Energetic • Playful • Modern • Approachable</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Use Cases</p>
+                           <p class="text-xs text-stone-600">DTC, beverages, wellness, beauty, streetwear</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div>
+                     <h3 class="text-base font-semibold text-stone-800 mb-3">Template 2: LUXE</h3>
+                     <p class="text-sm text-stone-600 mb-3">Serif foundation</p>
+                     
+                     <div class="space-y-3">
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Typography</p>
+                           <p class="text-xs text-stone-600">Abhaya Libre (headings & body)</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Personality</p>
+                           <p class="text-xs text-stone-600">Sophisticated • Timeless • Elevated • Refined</p>
+                        </div>
+                        <div>
+                           <p class="text-xs font-semibold text-stone-700">Use Cases</p>
+                           <p class="text-xs text-stone-600">Fashion, jewelry, luxury goods, traditional brands</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="mt-6 p-4 bg-stone-50 rounded-lg">
+                  <p class="text-xs font-semibold text-stone-700 mb-2">Why 2 Templates Work</p>
+                  <ul class="text-xs text-stone-600 space-y-1">
+                     <li>✓ Covers 95% of brand types through typography psychology</li>
+                     <li>✓ Engineering can ship in 3 weeks vs. 4+ months</li>
+                     <li>✓ Easier to maintain accessibility standards (2 vs 6)</li>
+                     <li>✓ Deep customization within each makes them versatile</li>
+                     <li>✓ Validates template approach before expanding</li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+
+         <!-- Timeline -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">The 3-Week Sprint</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <div class="space-y-6">
+                  <div>
+                     <p class="font-semibold text-stone-800 mb-2">Week 1: Research → Exploration → Decision</p>
+                     <div class="space-y-2 text-sm text-stone-600">
+                        <p><strong class="text-stone-700">Days 1-2:</strong> Defined strategic tension, identified user personas</p>
+                        <p><strong class="text-stone-700">Days 3-4:</strong> Explored 3 approaches (drag-and-drop, more pickers, templates)</p>
+                        <p><strong class="text-stone-700">Day 5:</strong> Engineering constraint: need 2 templates max</p>
+                        <p><strong class="text-stone-700">Days 6-7:</strong> Customer analysis → Typography insight → Decision to build 2 templates</p>
+                     </div>
+                  </div>
+
+                  <div>
+                     <p class="font-semibold text-stone-800 mb-2">Week 2: Design</p>
+                     <div class="space-y-1 text-sm text-stone-600">
+                        <p>• Designed both POP and LUXE templates</p>
+                        <p>• Typography systems & layout structures</p>
+                        <p>• Form components & color systems</p>
+                        <p>• Built-in accessibility standards</p>
+                        <p>• Progressive customization levels</p>
+                        <p>• Design specs for engineering handoff</p>
+                     </div>
+                  </div>
+
+                  <div>
+                     <p class="font-semibold text-stone-800 mb-2">Week 3: Engineering Build</p>
+                     <div class="space-y-1 text-sm text-stone-600">
+                        <p>• Implemented both templates</p>
+                        <p>• Built customization interface</p>
+                        <p>• Integrated accessibility features</p>
+                        <p>• QA & shipped to production</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="mt-6 constraint-card rounded-lg p-4">
+                  <p class="text-xs font-semibold text-amber-700 mb-2">The Trade-Off: Speed Over Rigor</p>
+                  <p class="text-sm text-stone-600">3 weeks from problem to shipped feature meant sacrificing formal user testing, structured interviews, and prototype validation. The business urgency (increasing support tickets + churn concerns) justified the speed, but we relied on post-launch feedback rather than pre-validation.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Customization System -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Guided Customization: Two Tiers</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-sm text-stone-600 mb-4">All customization is guided through UI controls—no CSS, no code, no "blank canvas" overwhelm. We constrained customization intentionally to maintain accessibility standards, prevent brand-breaking choices, and reduce support burden.</p>
+
+               <div class="space-y-6">
+                  <div class="p-5 bg-emerald-50 rounded-lg border border-emerald-100">
+                     <p class="font-semibold text-emerald-800 mb-2">Tier 1: Quick Setup (Essential Branding)</p>
+                     <p class="text-sm text-stone-600 mb-2">Pick template → Upload logo → Match brand colors → Done</p>
+                     <div class="text-xs text-stone-600 mt-3 space-y-1">
+                        <p>✓ Template selection (POP or LUXE)</p>
+                        <p>✓ Logo upload</p>
+                        <p>✓ Primary brand color</p>
+                        <p>✓ Background color</p>
+                        <p>✓ Button color & text color</p>
+                        <p>✓ Welcome text customization</p>
+                     </div>
+                     <p class="text-xs text-stone-500 mt-3">Time: 5-10 minutes | User: Sarah (solo founders, indie brands)</p>
+                  </div>
+
+                  <div class="p-5 bg-purple-50 rounded-lg border border-purple-100">
+                     <p class="font-semibold text-purple-800 mb-2">Tier 2: Brand Precision (High-Volume Operators)</p>
+                     <p class="text-sm text-stone-600 mb-2">Guided controls for exact brand matching across multiple campaigns</p>
+                     <div class="grid md:grid-cols-2 gap-3 text-xs text-stone-600 mt-3">
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Color Controls</p>
+                           <p>✓ Hex color inputs (precise matching)</p>
+                           <p>✓ Text color overrides</p>
+                           <p>✓ Background opacity controls</p>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Layout Controls</p>
+                           <p>✓ Logo sizing slider (S/M/L/XL)</p>
+                           <p>✓ Logo positioning (top/center)</p>
+                           <p>✓ Spacing presets (compact/standard/spacious)</p>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Style Controls</p>
+                           <p>✓ Button corner radius (sharp/rounded/pill)</p>
+                           <p>✓ Header styling options</p>
+                           <p>✓ Social icon customization</p>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Form Controls</p>
+                           <p>✓ Input field label styles</p>
+                           <p>✓ Field border options</p>
+                           <p>✓ Error message styling</p>
+                        </div>
+                     </div>
+                     <p class="text-xs text-stone-500 mt-3">Time: 15-25 minutes | User: Marcus (growth marketers, brand managers running multiple campaigns)</p>
+                  </div>
+               </div>
+
+               <div class="mt-6 p-4 bg-stone-50 rounded-lg">
+                  <p class="text-xs font-semibold text-stone-700 mb-2">What's Locked (Intentionally)</p>
+                  <p class="text-xs text-stone-600 mb-2">Typography hierarchy, font families, input field heights, core layout structure, minimum font sizes, touch target sizes</p>
+                  <p class="text-xs text-stone-500 italic">Why: Maintains accessibility standards (4.5:1 contrast, 44px touch targets, 16px mobile text), prevents brand-breaking choices, reduces "my form looks broken" support tickets</p>
+               </div>
+
+               <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <p class="text-xs font-semibold text-blue-800 mb-2">High-Volume Operator Workflows (Guided)</p>
+                  <div class="text-xs text-stone-600 space-y-2">
+                     <p>• <strong>Multi-campaign branding:</strong> Marcus creates 5 forms for different product lines using Tier 2 hex inputs and logo sizing—each form matches website precisely while maintaining template structure</p>
+                     <p>• <strong>A/B testing variants:</strong> Test "compact spacing + sharp corners" vs "spacious + rounded" to see which converts better—all within guided presets</p>
+                     <p>• <strong>Brand preset system (Future):</strong> Save "Summer Campaign 2024" settings and reuse across 10 forms in seconds—currently manual but requested by 40% of power users</p>
+                  </div>
+               </div>
+
+               <div class="mt-4 ux-decision-note">
+                  <p class="text-xs font-semibold text-blue-800 mb-1">🎯 Decision Point #3: Guided Controls vs. Custom CSS</p>
+                  <p class="text-xs text-stone-600">I chose guided UI controls over custom CSS because: (A) our users are marketers/founders, not developers, (B) guided controls guarantee accessibility compliance automatically, (C) prevents "help my form is broken" support tickets, (D) faster for high-volume use (drag slider vs write CSS). Trade-off: ~5% of users want unrestricted control, but serving them would break the experience for the other 95%.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Template Versatility -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">One Template, Infinite Expressions</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-sm text-stone-600 mb-6">The real test of our "depth over breadth" strategy: Can the same template create drastically different brand expressions? Here are three examples using the POP template:</p>
+
+               <div class="space-y-6">
+                  <div class="p-5 bg-gradient-to-br from-orange-50 to-pink-50 rounded-xl border border-orange-100">
+                     <div class="flex items-start justify-between mb-3">
+                        <div>
+                           <p class="font-semibold text-stone-800">Example 1: PopSips (Beverage Brand)</p>
+                           <p class="text-xs text-stone-500 mt-1">Template: POP (Sans-Serif)</p>
+                        </div>
+                     </div>
+                     
+                     <div class="grid md:grid-cols-2 gap-4 text-xs text-stone-600">
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Customization Choices</p>
+                           <ul class="space-y-1">
+                              <li>• Orange/cream color palette</li>
+                              <li>• Large logo placement</li>
+                              <li>• Spacious layout density</li>
+                              <li>• Pill-shaped button corners</li>
+                              <li>• Playful welcome text tone</li>
+                           </ul>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Result</p>
+                           <p>Energetic, playful, beverage brand personality. High contrast (7.8:1) maintains accessibility while feeling fun and approachable.</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="p-5 bg-gradient-to-br from-pink-50 to-white rounded-xl border border-pink-100">
+                     <div class="flex items-start justify-between mb-3">
+                        <div>
+                           <p class="font-semibold text-stone-800">Example 2: Clean Beauty Brand (Hypothetical)</p>
+                           <p class="text-xs text-stone-500 mt-1">Template: POP (Sans-Serif) — Same foundation, different vibe</p>
+                        </div>
+                     </div>
+                     
+                     <div class="grid md:grid-cols-2 gap-4 text-xs text-stone-600">
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Customization Choices</p>
+                           <ul class="space-y-1">
+                              <li>• Soft pink/white palette</li>
+                              <li>• Medium logo size</li>
+                              <li>• Standard spacing</li>
+                              <li>• Rounded button corners</li>
+                              <li>• Minimal, clean aesthetic</li>
+                           </ul>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-stone-700 mb-1">Result</p>
+                           <p>Soft, minimal, wellness-focused. Same POP template feels completely different—calm and sophisticated instead of energetic. Contrast (8.2:1) exceeds accessibility standards.</p>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="p-5 bg-gradient-to-br from-stone-900 to-stone-700 rounded-xl border border-stone-600">
+                     <div class="flex items-start justify-between mb-3">
+                        <div>
+                           <p class="font-semibold text-white">Example 3: Streetwear Brand (Hypothetical)</p>
+                           <p class="text-xs text-stone-300 mt-1">Template: POP (Sans-Serif) — Bold, high-contrast direction</p>
+                        </div>
+                     </div>
+                     
+                     <div class="grid md:grid-cols-2 gap-4 text-xs text-stone-300">
+                        <div>
+                           <p class="font-semibold text-white mb-1">Customization Choices</p>
+                           <ul class="space-y-1">
+                              <li>• Black/neon green palette</li>
+                              <li>• Bold, prominent logo</li>
+                              <li>• Compact layout density</li>
+                              <li>• Sharp corner angles</li>
+                              <li>• High-contrast, edgy aesthetic</li>
+                           </ul>
+                        </div>
+                        <div>
+                           <p class="font-semibold text-white mb-1">Result</p>
+                           <p>Bold, urban, streetwear energy. Same POP template now feels aggressive and attention-grabbing. Extreme contrast (12.3:1) exceeds WCAG AAA standards.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="mt-6 insight-card rounded-lg p-4">
+                  <p class="text-sm text-stone-700 font-medium mb-2">Key Learning: One Template + Deep Customization = Infinite Brand Expressions</p>
+                  <p class="text-xs text-stone-600">All three examples use the SAME POP template with the SAME typography foundation (Montserrat + Inter). Only colors, spacing, and styling differ—yet they feel completely distinct. This proves our "depth over breadth" hypothesis: brands don't need 10 templates, they need 2 excellent foundations with deep customization options.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Usability Standards -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Usability Standards: Preventing Bad Outcomes</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <p class="text-sm text-stone-600 mb-4 italic">"Customization freedom shouldn't come at the cost of usability."</p>
+
+               <p class="text-sm text-stone-600 mb-6">Remember our PM/Engineer's original concern: "The reason I didn't allow so much customization in the beginning was for accessibility." But let's be honest about the actual use case: these are <strong>private forms shared with influencers</strong>, primarily viewed on <strong>mobile phones</strong>. We're not building a public website that needs full WCAG compliance—we're preventing brands from making forms that are <strong>hard to read and use</strong>.</p>
+
+               <p class="text-sm text-stone-600 mb-6"><strong>The Approach:</strong> Smart guardrails that prevent the most common usability problems without being excessive.</p>
+
+               <div class="space-y-4">
+                  <div class="p-4 bg-stone-50 rounded-lg">
+                     <p class="font-semibold text-stone-800 mb-2 text-sm">1. Color Contrast Warnings</p>
+                     <p class="text-sm text-stone-600 mb-3">When brands customize button/text colors, the system checks contrast ratios. If contrast is too low (below 4.5:1), a warning appears:</p>
+                     
+                     <div class="rounded-lg overflow-hidden border border-amber-200">
+                        <img src="templates_png/contrast-warning-ui.png" alt="Contrast warning interface" class="w-full">
+                     </div>
+
+                     <p class="text-xs text-stone-600 mt-3"><strong>Why this matters:</strong> Influencers use phones in bright sunlight, outdoors, in cafes. Low contrast = literally can't read the text. This isn't about compliance—it's about basic usability.</p>
+
+                     <p class="text-xs text-stone-600 mt-2"><strong>The decision:</strong> We warn but don't block. Some brands might have legitimate reasons for lower contrast (watermark text, decorative elements). This educates without becoming the "design police."</p>
+
+                     <div class="mt-3 ux-decision-note">
+                        <p class="text-xs font-semibold text-blue-800 mb-1">🎯 Decision Point #4: Warn or Block?</p>
+                        <p class="text-xs text-stone-600">I chose warnings over hard blocks because (A) respects brand autonomy, (B) educates about best practices, and (C) some edge cases exist where lower contrast is intentional. Trade-off: 5% of brands might ship with poor contrast, but we avoid becoming overly restrictive.</p>
+                     </div>
+                  </div>
+
+                  <div class="p-4 bg-stone-50 rounded-lg">
+                     <p class="font-semibold text-stone-800 mb-2 text-sm">2. Minimum Font Sizes (Mobile Readability)</p>
+                     <p class="text-sm text-stone-600 mb-2">Typography sizing locked to readable minimums:</p>
+                     <ul class="text-xs text-stone-600 mt-2 space-y-1 ml-4">
+                        <li>• Body text: 16px minimum</li>
+                        <li>• Form labels: 14px minimum</li>
+                        <li>• Button text: 16px minimum</li>
+                        <li>• Welcome headings: 24px minimum</li>
+                     </ul>
+                     <p class="text-xs text-stone-600 mt-2"><strong>Why this matters:</strong> These forms are viewed on phones, often by people glancing at them while multitasking. Text smaller than 16px on mobile is legitimately hard to read.</p>
+                  </div>
+
+                  <div class="p-4 bg-stone-50 rounded-lg">
+                     <p class="font-semibold text-stone-800 mb-2 text-sm">3. Touch-Friendly Buttons & Inputs</p>
+                     <p class="text-sm text-stone-600 mb-2">Interactive elements sized for fingers, not mouse cursors:</p>
+                     <ul class="text-xs text-stone-600 mt-2 space-y-1 ml-4">
+                        <li>• Form inputs: 44px minimum height</li>
+                        <li>• Buttons: 44px minimum height</li>
+                        <li>• Checkboxes: 24px minimum tap area</li>
+                     </ul>
+                     <p class="text-xs text-stone-600 mt-2"><strong>Why this matters:</strong> Influencers fill out forms on phones, often while walking, in cars, on the go. Tiny buttons = mis-taps = frustration = abandoned forms.</p>
+                  </div>
+
+                  <div class="p-4 bg-stone-50 rounded-lg">
+                     <p class="font-semibold text-stone-800 mb-2 text-sm">4. Mobile-First Design (Always Vertical)</p>
+                     <p class="text-sm text-stone-600 mb-2">Forms are designed for phone screens first:</p>
+                     <ul class="text-xs text-stone-600 mt-2 space-y-1 ml-4">
+                        <li>• Single-column vertical layout (optimized for scrolling)</li>
+                        <li>• On desktop: form stays narrow (~400-500px) with margins on sides</li>
+                        <li>• Never stretches to fill wide screens</li>
+                        <li>• Maintains phone-like aspect ratio across devices</li>
+                     </ul>
+                     <p class="text-xs text-stone-600 mt-2"><strong>Why this matters:</strong> 95%+ of influencers view forms on mobile. Designing for desktop first would optimize for the 5% edge case.</p>
+                  </div>
+               </div>
+
+               <div class="mt-6 insight-card rounded-lg p-4">
+                  <p class="text-sm text-stone-700 font-medium mb-2">The Philosophy: Practical, Not Perfect</p>
+                  <p class="text-xs text-stone-600">We're not building for WCAG AAA compliance or screen readers. We're preventing the most common ways brands break their own forms: unreadable text, tiny buttons, poor contrast. These guardrails work invisibly—most brands never realize the constraints exist because they only prevent bad outcomes, not creative choices.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Iteration & Validation -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Validation: Post-Launch Learning</h2>
+            
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft mb-6">
+               <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Honest Process Note</p>
+               <p class="text-sm text-stone-600">Due to the 3-week timeline, we didn't conduct formal usability testing rounds. However, we gathered feedback through close customer relationships and observed real usage patterns post-launch. Here's what that looked like:</p>
+            </div>
+
+            <div class="space-y-6">
+               <!-- Early Feedback -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <div class="flex items-start justify-between mb-3">
+                     <h3 class="text-base font-semibold text-stone-800">Post-Launch: Immediate Adoption Signals</h3>
+                     <span class="text-xs text-stone-500">Week 1-2 after launch</span>
+                  </div>
+
+                  <p class="text-sm text-stone-600 mb-4">Within 48 hours of launch, brands started creating forms with the new templates. This quick uptake suggested templates were discoverable and intuitive.</p>
+
+                  <div class="space-y-3">
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-xs font-semibold text-emerald-800 mb-1">Positive Signal #1: Natural Template Split</p>
+                        <p class="text-xs text-stone-600">~65% chose POP, ~35% chose LUXE. This distribution validated our typography hypothesis—DTC brands gravitated to sans-serif, luxury brands to serif.</p>
+                     </div>
+
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-xs font-semibold text-emerald-800 mb-1">Positive Signal #2: Support Ticket Drop</p>
+                        <p class="text-xs text-stone-600">"How do I make this more branded?" tickets decreased by ~60% in the first month.</p>
+                     </div>
+
+                     <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p class="text-xs font-semibold text-emerald-800 mb-1">Positive Signal #3: Qualitative Feedback</p>
+                        <div class="mt-2 space-y-2">
+                           <p class="text-xs text-stone-700 italic">"Finally! This looks like our brand" — PopSips founder</p>
+                           <p class="text-xs text-stone-700 italic">"The LUXE template is exactly what we needed" — Six Stories</p>
+                           <p class="text-xs text-stone-700 italic">"Setup was so much faster than before" — Avec Les Filles</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- What Users Requested -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <div class="flex items-start justify-between mb-3">
+                     <h3 class="text-base font-semibold text-stone-800">Feature Requests: What Brands Asked For</h3>
+                     <span class="text-xs text-stone-500">Month 1-2 after launch</span>
+                  </div>
+
+                  <p class="text-sm text-stone-600 mb-4">After using templates for several weeks, brands started requesting additional features:</p>
+
+                  <div class="grid md:grid-cols-2 gap-4">
+                     <div>
+                        <p class="text-xs font-semibold text-stone-700 mb-2">What They WANTED</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• More font pairing options (within templates)</li>
+                           <li>• Ability to save brand presets</li>
+                           <li>• More control over spacing/density</li>
+                           <li>• Additional color customization</li>
+                        </ul>
+                      </div>
+                     <div>
+                        <p class="text-xs font-semibold text-stone-700 mb-2">What They DIDN'T Ask For</p>
+                        <ul class="text-xs text-stone-600 space-y-1">
+                           <li>• More template varieties</li>
+                           <li>• Different typography directions</li>
+                           <li>• Major layout changes</li>
+                           <li>• Complete redesigns</li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                     <p class="text-xs font-semibold text-blue-800 mb-1">Key Insight</p>
+                     <p class="text-xs text-stone-600">Users wanted DEPTH within existing templates, not more template options. This validated our "2 foundations with deep customization" approach.</p>
+                  </div>
+               </div>
+
+               <!-- What Changed Based on Feedback -->
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <h3 class="text-base font-semibold text-stone-800 mb-3">What We'd Adjust Based on This Learning</h3>
+
+                  <div class="space-y-3">
+                     <div class="p-3 bg-stone-50 rounded-lg">
+                        <p class="text-xs font-semibold text-stone-700 mb-1">If I Could Go Back: Early Validation</p>
+                        <p class="text-xs text-stone-600">I would have spent 2-3 days testing the 2-template concept with 5-8 brands BEFORE building. This would have:</p>
+                        <ul class="text-xs text-stone-600 mt-2 space-y-1 ml-3">
+                           <li>• Validated typography hypothesis earlier</li>
+                           <li>• Identified the "5% edge case" brands that don't fit</li>
+                           <li>• Caught the "save brand presets" need upfront</li>
+                           <li>• Given us confidence to commit to 2 instead of worrying about coverage</li>
+                        </ul>
+                     </div>
+
+                     <div class="p-3 bg-stone-50 rounded-lg">
+                        <p class="text-xs font-semibold text-stone-700 mb-1">Iteration Pattern We Observed</p>
+                        <p class="text-xs text-stone-600">Brands typically went through this evolution:</p>
+                        <div class="mt-2 space-y-2">
+                           <p class="text-xs text-stone-600"><strong>Week 1:</strong> "This looks great! Finally matches our brand"</p>
+                           <p class="text-xs text-stone-600"><strong>Week 2-3:</strong> "Can I tweak the spacing a bit more?"</p>
+                           <p class="text-xs text-stone-600"><strong>Month 2:</strong> "I wish I could save this as a preset for future forms"</p>
+                        </div>
+                        <p class="text-xs text-stone-600 mt-2">This progression from "it works" → "minor tweaks" → "workflow improvements" is exactly what you want to see. It means the core solution is right, just needs enhancement.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Reflection -->
+         <section class="mt-16 sm:mt-20">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">Reflection</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-6">
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <h3 class="font-semibold text-stone-800 mb-4">What Worked</h3>
+                  
+                  <div class="space-y-4 text-sm text-stone-600">
+                     <div>
+                        <p class="font-medium text-stone-800">Constraint-driven design</p>
+                        <p class="mt-1">Engineering pushback forced better decisions. Instead of 6 mediocre templates, we built 2 excellent foundations with depth.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Typography-first thinking</p>
+                        <p class="mt-1">Identifying typography as the core differentiator provided a strong conceptual framework that guided every decision.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Accessibility as foundation</p>
+                        <p class="mt-1">Building accessibility from day one ensured compliance without extra work. Easier to build in than bolt on.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Fast shipping enabled learning</p>
+                        <p class="mt-1">3-week timeline meant we could validate with real usage quickly rather than speculating for months.</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+                  <h3 class="font-semibold text-stone-800 mb-4">What I'd Do Differently</h3>
+                  
+                  <div class="space-y-4 text-sm text-stone-600">
+                     <div>
+                        <p class="font-medium text-stone-800">Lightweight validation before building</p>
+                        <p class="mt-1">Even 2-3 days testing concepts with 5-8 brands would have validated the hypothesis earlier and caught edge cases.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">Define success metrics upfront</p>
+                        <p class="mt-1">Should have pre-defined: template selection distribution, time-to-complete, support ticket reduction, churn impact timeline.</p>
+                     </div>
+
+                     <div>
+                        <p class="font-medium text-stone-800">More structured feedback collection</p>
+                        <p class="mt-1">Post-setup survey, in-app NPS, tracked metrics would inform roadmap with more confidence than informal feedback.</p>
+                     </div>
+                  </div>
+
+                  <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                     <p class="text-xs font-semibold text-blue-800 mb-2">Key Learning</p>
+                     <p class="text-xs text-stone-700">Even aggressive timelines can accommodate lightweight research. I assumed 3 weeks = no time for validation. But 3 hours of concept testing ≠ 3 weeks of usability studies.</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="mt-6 insight-card rounded-2xl p-6">
+               <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Final Reflection</p>
+               <p class="text-sm text-stone-700 leading-relaxed">This project taught me that constraints aren't limitations—they're clarity. The engineering pushback forced me to find the core insight (typography psychology) that made everything else fall into place. Perfect research isn't always possible. But intentional trade-offs, fast shipping, and honest assessment of what you don't know—that's real product design.</p>
+            </div>
+
+            <!-- What's Next -->
+            <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+               <h3 class="text-base font-semibold text-stone-800 mb-4">What's Next: Product Roadmap</h3>
+               
+               <div class="space-y-4">
+                  <div>
+                     <p class="text-sm font-medium text-stone-800 mb-2">Short-term (Next 3 Months)</p>
+                     <p class="text-xs text-stone-600 mb-2">Based on early user feedback:</p>
+                     <ul class="text-xs text-stone-600 space-y-1 ml-4">
+                        <li>• Add 3-5 more font pairing options within each template</li>
+                        <li>• Implement brand preset system (save/reuse customizations across forms)</li>
+                        <li>• More granular spacing/density controls</li>
+                        <li>• Formal satisfaction survey to baseline user sentiment</li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <p class="text-sm font-medium text-stone-800 mb-2">Medium-term (6-12 Months)</p>
+                     <p class="text-xs text-stone-600 mb-2">Validate and expand:</p>
+                     <ul class="text-xs text-stone-600 space-y-1 ml-4">
+                        <li>• Measure churn impact (did templates solve the retention problem?)</li>
+                        <li>• Assess if 3rd template is needed based on usage data and edge cases</li>
+                        <li>• Consider custom CSS option for power users (if demand is strong)</li>
+                        <li>• Track influencer completion rates (does professional look = better conversions?)</li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <p class="text-sm font-medium text-stone-800 mb-2">Long-term Vision</p>
+                     <p class="text-xs text-stone-600 mb-2">If data supports expansion:</p>
+                     <ul class="text-xs text-stone-600 space-y-1 ml-4">
+                        <li>• Template 3: "Editorial" for high-fashion/magazine aesthetics (if 5% edge case grows)</li>
+                        <li>• AI-assisted color palette generation from brand assets</li>
+                        <li>• Animation/micro-interaction options</li>
+                        <li>• A/B testing framework for template optimization</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                  <p class="text-xs font-semibold text-blue-800 mb-1">Guiding Principle</p>
+                  <p class="text-xs text-stone-600">Let usage data guide decisions, not assumptions. We shipped an MVP hypothesis (2 templates work for 95% of brands). Now we measure, learn, and iterate based on real behavior—not wishful thinking.</p>
+               </div>
+            </div>
+         </section>
+
+      </div>
+   </main>
+
+   <!-- Footer -->
+   <footer class="px-4 sm:px-8 md:px-16 py-12 border-t border-stone-200" style="background: #FAF9F6;">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+         <div>
+            <p class="text-stone-400 text-sm mb-1">Let's work together</p>
+            <a href="mailto:fu.shih@northeastern.edu"
+               class="text-stone-800 hover:text-stone-500">fu.shih@northeastern.edu</a>
+         </div>
+         <div class="flex gap-6 text-sm text-stone-400">
+            <a href="https://linkedin.com/in/shihjufu" target="_blank" class="hover:text-stone-600"
+               rel="noreferrer">LinkedIn</a>
+            <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view" target="_blank" class="hover:text-stone-600">Resume</a>
+         </div>
+      </div>
+      <p class="mt-12 text-stone-300 text-sm italic text-center">Great design is always hidden in plain sight.</p>
+   </footer>
+</body>
+</html>

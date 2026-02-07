@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Influencer Gift Form — Branded Claim Form Templates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #FAF9F6; }
+    body { background: var(--bg); }
+
+    .shadow-soft { box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+    .ph { background: rgba(0,0,0,0.02); border: 1px dashed rgba(120,113,108,0.35); }
+    .ph-label { letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; color: rgb(120,113,108); }
+
+    .kbd {
+      border: 1px solid rgba(120,113,108,0.25);
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      padding: 2px 8px;
+      font-size: 12px;
+      color: rgb(87,83,78);
+    }
+
+    .insight-card { border-left: 3px solid rgb(34,197,94); background: rgba(34,197,94,0.04); }
+    .tradeoff-card { border-left: 3px solid rgb(245,158,11); background: rgba(245,158,11,0.04); }
+
+    .constraint-pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: rgba(245,158,11,0.1);
+      color: rgb(180,83,9);
+      border: 1px solid rgba(245,158,11,0.2);
+    }
+
+    .ux-decision-note {
+      background: rgba(59,130,246,0.05);
+      border-left: 3px solid rgb(59,130,246);
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .vs-circle {
+      width: 32px;
+      height: 32px;
+      background: white;
+      border: 2px solid rgb(229,231,235);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgb(107,114,128);
+    }
+
+    .hybrid-badge {
+      background: linear-gradient(135deg, rgba(168,85,247,0.1) 0%, rgba(59,130,246,0.1) 100%);
+      border: 1px solid rgba(168,85,247,0.2);
+      color: rgb(126,34,206);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body class="text-stone-800">
+  <!-- Top nav (matches your existing page) -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-16 py-4 sm:py-6"
+       style="background: rgba(250,249,246,0.9); backdrop-filter: blur(12px);">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="text-stone-800 font-medium text-sm sm:text-base">Juju</a>
+      <div class="flex items-center gap-4 sm:gap-8 text-xs sm:text-sm text-stone-400">
+        <a href="index.html#work" class="hover:text-stone-700">Work</a>
+        <a href="visuals.html" class="hover:text-stone-700">Visuals</a>
+        <a href="index.html#about" class="hover:text-stone-700">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <main class="pt-24 sm:pt-28 md:pt-32 pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 md:px-16">
+
+      <!-- Hero -->
+      <header class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-start lg:items-center">
+        <div class="lg:col-span-6 max-w-[720px]">
+          <p class="text-stone-400 text-sm sm:text-base mb-3">Case Study</p>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight">
+            Influencer Gift Form — Branded Claim Form Redesign
+            <span class="block text-stone-400">Balancing customization freedom with accessibility guardrails for non-designers</span>
+          </h1>
+
+          <p class="mt-4 sm:mt-6 text-stone-500 text-sm sm:text-base leading-relaxed max-w-lg">
+            Merchants wanted their influencer claim form to feel on-brand — but most Shopify brands don’t have designers. I designed a guided
+            customization system (two templates + brand tokens) that creates a trustworthy, readable creator experience without letting merchants
+            accidentally publish inaccessible or “bad-looking” forms.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+              style="background: rgba(34,197,94,0.12); color: rgb(21,128,61);">B2B SaaS</span>
+            <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-full"
+              style="background: rgba(245,158,11,0.12); color: rgb(180,83,9);">Design System / Guardrails</span>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-stone-500">
+            <span class="kbd">Role: Product Designer</span>
+            <span class="kbd">Output: UI + Customization Model</span>
+            <span class="kbd">Status: Case Study</span>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="lg:col-span-6 lg:self-center">
+          <div class="w-full lg:max-w-[820px] ml-auto">
+            <div class="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-soft">
+              <div class="p-4">
+                <div class="rounded-xl w-full aspect-[3/2] overflow-hidden bg-stone-50 border border-stone-200">
+                  <!-- Replace with your best "after" collage if you have it -->
+                  <img src="igfform_png/new_form1.png" alt="Branded claim form template preview"
+                       class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Insight -->
+      <section class="mt-14">
+        <div class="insight-card rounded-2xl p-6">
+          <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Core Insight</p>
+          <p class="text-lg sm:text-xl text-stone-800 font-medium leading-snug">
+            Customization isn’t “more is better” — it changes outcome quality, accessibility, and trust.
+          </p>
+          <p class="text-sm text-stone-600 mt-3 max-w-7xl">
+            Merchants asked for a better-designed form — but giving unlimited styling freedom would let non-designers create unreadable,
+            inconsistent pages (contrast, typography, hierarchy). Too little customization makes every claim form feel generic and weakens the
+            first brand touchpoint creators experience.
+          </p>
+          <p class="text-sm text-stone-600 mt-3 max-w-7xl">
+            The UX problem became: enable meaningful brand expression while enforcing guardrails so every creator can complete the claim quickly
+            and confidently, especially on mobile.
+          </p>
+        </div>
+      </section>
+
+      <!-- Meta cards -->
+      <section class="mt-10 grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
+          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Problem</p>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            The existing claim form felt generic and “too basic,” limiting brand expression. But expanding customization risked
+            inconsistent, inaccessible forms created by non-designers.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
+          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Goal</p>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            Help merchants create an on-brand, trustworthy claim form in minutes — while keeping layout, readability, and accessibility
+            consistently high.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-soft">
+          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">How Might We</p>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            Give non-designer merchants enough flexibility to feel on-brand without allowing customizations that break usability or accessibility?
+          </p>
+        </div>
+      </section>
+
+      <!-- Research & Discovery -->
+      <section class="mt-16 sm:mt-20">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Research & Discovery</h2>
+        <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+          Turning “make it look better” into a usable system decision.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Customer / PM signal -->
+          <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+            <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Customer Feedback Themes</p>
+            <p class="text-sm text-stone-700 leading-relaxed mb-4">
+              Merchants wanted the claim page to feel like their brand — especially because creators are asked to enter shipping details.
+              The form acts as a first official brand touchpoint in the gifting flow.
+            </p>
+            <ul class="text-sm text-stone-700 space-y-2 mb-4">
+              <li class="flex items-start"><span class="text-stone-400 mr-2">•</span><span>“It looks too basic — can we make it feel more premium?”</span></li>
+              <li class="flex items-start"><span class="text-stone-400 mr-2">•</span><span>“I want it to look like our site, not a generic form.”</span></li>
+              <li class="flex items-start"><span class="text-stone-400 mr-2">•</span><span>“We don’t have a designer — it needs to be easy.”</span></li>
+            </ul>
+            <div class="p-3 bg-stone-50 rounded-lg">
+              <p class="text-xs font-medium text-stone-700 mb-1">Design implication</p>
+              <p class="text-xs text-stone-600">
+                This is a builder UX problem: reduce decision fatigue and prevent “bad outcomes” while still allowing recognizable brand identity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reference model -->
+          <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+            <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-3">Reference Model: Linktree</p>
+            <p class="text-sm text-stone-700 leading-relaxed mb-4">
+              Linktree enables brand expression primarily through themes and tokens (colors, fonts, buttons), while keeping layout consistent.
+              That constraint keeps outcomes high quality for non-designers.
+            </p>
+
+            <div class="tradeoff-card rounded-xl p-4">
+              <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Key takeaway</p>
+              <p class="text-sm text-stone-700 leading-relaxed">
+                “Allow customization where it matters (brand expression), lock the structure where it protects usability (layout, hierarchy, states).”
+              </p>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="constraint-pill">Non-designer users</span>
+              <span class="constraint-pill">Accessibility risk</span>
+              <span class="constraint-pill">Mobile completion</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="mt-16 sm:mt-20">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-6">What I Designed</h2>
+
+        <p class="text-stone-600 mb-6">
+          I designed a guided customization system for the creator-facing claim form:
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-stone-700 border-collapse border border-stone-200 rounded-lg">
+            <thead>
+              <tr class="bg-stone-50">
+                <th class="border border-stone-200 p-3 text-left font-semibold">Component</th>
+                <th class="border border-stone-200 p-3 text-left font-semibold">What It Does</th>
+                <th class="border border-stone-200 p-3 text-left font-semibold">Why It Matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-stone-200 p-3 font-medium">Two Templates</td>
+                <td class="border border-stone-200 p-3">Classic (serif) and Bold (sans) starting points</td>
+                <td class="border border-stone-200 p-3">Reduces decision paralysis while covering common brand “tones.”</td>
+              </tr>
+              <tr class="bg-stone-50">
+                <td class="border border-stone-200 p-3 font-medium">Brand Tokens</td>
+                <td class="border border-stone-200 p-3">Logo, key colors, background, button styling (within template)</td>
+                <td class="border border-stone-200 p-3">Lets brands feel recognizable without letting structure break.</td>
+              </tr>
+              <tr>
+                <td class="border border-stone-200 p-3 font-medium">Guardrails</td>
+                <td class="border border-stone-200 p-3">Locked layout/spacing + consistent component and validation patterns</td>
+                <td class="border border-stone-200 p-3">Prevents accessibility failures and preserves mobile readability.</td>
+              </tr>
+              <tr class="bg-stone-50">
+                <td class="border border-stone-200 p-3 font-medium">Creator Flow Consistency</td>
+                <td class="border border-stone-200 p-3">Product selection → shipping info → submit</td>
+                <td class="border border-stone-200 p-3">Keeps end-user experience predictable across brands and templates.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="mt-16 sm:mt-20">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Process</h2>
+        <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+          The decisions that shaped the system — and the tradeoffs behind them.
+        </p>
+
+        <!-- Decision 1 -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+          <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 1: Freeform Customization vs Guided Templates</h3>
+
+          <div class="comparison-grid">
+            <div class="p-4 recognize bg-stone-50 rounded-lg border border-stone-200">
+              <p class="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-2">Option A</p>
+              <p class="font-medium text-stone-800 text-sm">Freeform editor</p>
+              <ul class="mt-2 text-xs text-stone-600 space-y-1">
+                <li>• Maximum flexibility</li>
+                <li>• High risk of low-quality outcomes for non-designers</li>
+                <li>• More accessibility regressions (contrast, text size, focus)</li>
+              </ul>
+            </div>
+
+            <div class="vs-circle">vs</div>
+
+            <div class="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+              <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Chosen</p>
+              <p class="font-medium text-stone-800 text-sm">Two templates + brand tokens</p>
+              <ul class="mt-2 text-xs text-stone-600 space-y-1">
+                <li>• Strong starting point for non-designers</li>
+                <li>• Meaningful brand expression (without layout edits)</li>
+                <li>• Guardrails protect usability and accessibility</li>
+              </ul>
+              <div class="mt-3">
+                <span class="hybrid-badge">Guided customization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ux-decision-note my-6">
+            <p class="text-sm text-stone-600">
+              <strong>UX rationale:</strong> “More options” increases the chance of inaccessible, inconsistent forms. A guided system limits
+              harmful degrees of freedom while still allowing brands to feel recognizable.
+            </p>
+          </div>
+
+          <p class="text-sm text-stone-600">
+            <strong class="text-stone-800">Decision:</strong> Built two archetype templates (Classic and Bold) to set typography tone and hierarchy,
+            then layered controlled customization (logo, colors, background). Layout and core component behavior remain locked.
+          </p>
+        </div>
+
+        <!-- Decision 2 -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft mt-6">
+          <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 2: What’s Customizable vs What’s Protected</h3>
+
+          <p class="text-sm text-stone-600 mb-4">
+            I separated customization into a <strong class="text-stone-800">brand layer</strong> (safe expression) and a
+            <strong class="text-stone-800">structure layer</strong> (protected usability).
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="p-4 bg-white rounded-xl border border-stone-200">
+              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Customizable</p>
+              <ul class="text-xs text-stone-700 space-y-2">
+                <li>• Logo</li>
+                <li>• Primary / accent color</li>
+                <li>• Background (color/image)</li>
+                <li>• Button styling (preset)</li>
+                <li>• Template choice (Classic/Bold)</li>
+              </ul>
+            </div>
+
+            <div class="p-4 bg-stone-50 rounded-xl border border-stone-200">
+              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Constrained</p>
+              <ul class="text-xs text-stone-700 space-y-2">
+                <li>• Typography controlled by template</li>
+                <li>• Header composition within bounds</li>
+                <li>• Spacing scale via presets (not sliders)</li>
+              </ul>
+            </div>
+
+            <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+              <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Locked (Guardrails)</p>
+              <ul class="text-xs text-stone-700 space-y-2">
+                <li>• Layout grid + field grouping</li>
+                <li>• Validation + error states</li>
+                <li>• Focus visibility and interaction states</li>
+                <li>• Mobile responsiveness</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ux-decision-note">
+            <p class="text-sm text-stone-600">
+              <strong>Accessibility tie-in:</strong> This split prevents the most common failures from uncontrolled customization:
+              low contrast buttons, illegible text on backgrounds, inconsistent hierarchy, and unclear error/focus states.
+            </p>
+          </div>
+        </div>
+
+        <!-- Decision 3 -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft mt-6">
+          <h3 class="text-base font-semibold text-stone-800 mb-3">Decision 3: Why “Classic” and “Bold” Archetypes</h3>
+
+          <p class="text-sm text-stone-600 mb-6">
+            Instead of many templates, I picked two archetypes that cover the majority of Shopify brand vibes while keeping choice simple.
+          </p>
+
+          <div class="grid lg:grid-cols-2 gap-6">
+            <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Classic</p>
+              <p class="text-sm text-stone-700">
+                Serif-forward, editorial, “premium.” Works well for beauty, fashion, and lifestyle brands that want a softer tone.
+              </p>
+              <ul class="mt-3 text-xs text-stone-600 space-y-1">
+                <li>• Calm hierarchy</li>
+                <li>• More whitespace</li>
+                <li>• Subtle accents</li>
+              </ul>
+            </div>
+
+            <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Bold</p>
+              <p class="text-sm text-stone-700">
+                Sans-forward, punchy, high energy. Fits brands that use strong color and louder CTAs.
+              </p>
+              <ul class="mt-3 text-xs text-stone-600 space-y-1">
+                <li>• Higher contrast accents</li>
+                <li>• Stronger CTA emphasis</li>
+                <li>• Clear section segmentation</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="text-sm text-stone-600 mt-5">
+            <strong class="text-stone-800">Decision:</strong> Two templates are enough to feel distinct without overwhelming non-designers.
+            Merchants start from a good baseline, then customize identity through tokens.
+          </p>
+        </div>
+      </section>
+
+      <!-- Design -->
+      <section id="design" class="mt-16 sm:mt-20">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Design</h2>
+        <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+          The two templates, shown as creator-facing experiences.
+        </p>
+
+        <!-- Screen 1 -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+            <div>
+              <h3 class="text-lg font-semibold text-stone-800">Template 1 — Classic (Serif)</h3>
+              <p class="text-sm text-stone-500 mt-1">Calm hierarchy and premium tone with brand tokens applied.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-stone-200">
+            <img src="igfform_png/new_form1.png" alt="Classic template claim form" class="w-full" />
+          </div>
+
+          <div class="mt-5 grid md:grid-cols-3 gap-3 text-sm">
+            <div class="p-3 bg-stone-50 rounded-lg">
+              <p class="font-medium text-stone-700">Trust cues</p>
+              <p class="text-stone-500 text-xs mt-1">Brand header makes link feel legitimate before shipping info.</p>
+            </div>
+            <div class="p-3 bg-stone-50 rounded-lg">
+              <p class="font-medium text-stone-700">Readability</p>
+              <p class="text-stone-500 text-xs mt-1">Template protects type scale and spacing across devices.</p>
+            </div>
+            <div class="p-3 bg-stone-50 rounded-lg">
+              <p class="font-medium text-stone-700">Guardrails</p>
+              <p class="text-stone-500 text-xs mt-1">Structure and states remain consistent even with styling changes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+            <div>
+              <h3 class="text-lg font-semibold text-stone-800">Template 2 — Bold (Sans)</h3>
+              <p class="text-sm text-stone-500 mt-1">Modern, energetic tone with stronger accents and CTA emphasis.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-stone-200">
+            <img src="igfform_png/new_form2.png" alt="Bold template claim form" class="w-full" />
+          </div>
+
+          <p class="mt-5 text-sm text-stone-600 leading-relaxed">
+            <strong class="text-stone-800">Consistency across templates:</strong> both templates keep the same completion flow and
+            preserve validation patterns — creators shouldn’t “learn a new form” just because the brand styling changes.
+          </p>
+        </div>
+
+        <!-- Optional placeholder: Builder controls screenshot -->
+        <div class="mt-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="text-lg font-semibold text-stone-800">Customization Controls (Merchant Builder)</h3>
+              <p class="text-sm text-stone-500 mt-1">Show what merchants can edit — the core of the case study.</p>
+            </div>
+            <span class="constraint-pill">Add screenshot</span>
+          </div>
+
+          <div class="rounded-xl ph p-10 flex items-center justify-center">
+            <div class="text-center">
+              <p class="ph-label">placeholder</p>
+              <p class="text-sm text-stone-500 mt-2">Drop in a screenshot of your customization panel here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reflection -->
+      <section id="reflection" class="mt-16 sm:mt-20">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-stone-800 mb-2">Reflection</h2>
+        <p class="text-stone-400 text-sm mb-8 max-w-2xl">
+          What I learned, and what I’d validate next.
+        </p>
+
+        <div class="grid lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+            <h3 class="text-base font-semibold text-stone-800 mb-4">What I learned</h3>
+
+            <div class="space-y-6">
+              <div>
+                <p class="font-medium text-stone-800">Customization is a UX risk multiplier.</p>
+                <p class="text-sm text-stone-600 mt-2">
+                  Giving merchants more degrees of freedom increases the chance of accessibility failures (contrast, typography, focus, error visibility).
+                  Guardrails aren’t “restriction” — they’re how you protect creators’ ability to complete the form.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-medium text-stone-800">Archetypes reduce cognitive load better than “more options.”</p>
+                <p class="text-sm text-stone-600 mt-2">
+                  Two templates gave merchants a quick “tone-of-voice” choice without overwhelming them. It’s faster to pick a direction than to design from scratch.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-medium text-stone-800">The creator experience should stay predictable even when styling changes.</p>
+                <p class="text-sm text-stone-600 mt-2">
+                  Consistent flow and states across templates reduces errors and supports mobile completion — the brand layer should never disrupt usability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-6">
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+              <h3 class="text-base font-semibold text-stone-800 mb-4">What I’d explore next</h3>
+              <ul class="text-sm text-stone-600 leading-relaxed space-y-2">
+                <li class="flex items-start"><span class="text-stone-400 mr-2">•</span>
+                  <span><strong>Contrast checks</strong> for chosen brand colors (prevent unreadable CTA/text combinations)</span>
+                </li>
+                <li class="flex items-start"><span class="text-stone-400 mr-2">•</span>
+                  <span><strong>Mobile-first preview</strong> toggle so merchants can validate “below the fold” layout while editing</span>
+                </li>
+                <li class="flex items-start"><span class="text-stone-400 mr-2">•</span>
+                  <span><strong>Template expansion</strong> only after demand is proven (e.g., add a third archetype for “playful” brands)</span>
+                </li>
+                <li class="flex items-start"><span class="text-stone-400 mr-2">•</span>
+                  <span><strong>Measurement plan</strong>: time-to-brand, completion rate, error rate, and styling-related support tickets</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-soft">
+              <h3 class="text-base font-semibold text-stone-800 mb-3">Outcome & Impact (how I’d measure)</h3>
+              <p class="text-sm text-stone-600 leading-relaxed">
+                The goal is to ship branded claim experiences that are both distinctive and consistently usable. I would validate impact by measuring:
+                <strong class="text-stone-800">time-to-brand</strong>, <strong class="text-stone-800">creator completion rate</strong>,
+                <strong class="text-stone-800">submission error rate</strong>, and <strong class="text-stone-800">support volume</strong>.
+              </p>
+              <div class="mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                <p class="text-xs font-medium text-emerald-800">Guardrail principle</p>
+                <p class="text-xs text-emerald-700 mt-1">Offer “meaningful brand expression” while keeping the experience accessible by default.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer (matches your existing page) -->
+  <footer class="px-4 sm:px-8 md:px-16 py-12 border-t border-stone-200" style="background: #FAF9F6;">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <p class="text-stone-400 text-sm mb-1">Let's work together</p>
+        <a href="mailto:fu.shih@northeastern.edu" class="text-stone-800 hover:text-stone-500">fu.shih@northeastern.edu</a>
+      </div>
+      <div class="flex gap-6 text-sm text-stone-400">
+        <a href="https://linkedin.com/in/shihjufu" target="_blank" class="hover:text-stone-600" rel="noreferrer">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1Kfp2ui2orbGl-xPLTVLjLMSrF4FuFbaX/view" target="_blank" class="hover:text-stone-600">Resume</a>
+      </div>
+    </div>
+    <p class="mt-12 text-stone-300 text-sm italic text-center">Great design is always hidden in plain sight.</p>
+  </footer>
+</body>
+</html>
