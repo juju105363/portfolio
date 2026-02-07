@@ -425,6 +425,28 @@
     }
   }
 
+  async function deleteSelectedFlower() {
+    if (!selectedFlower) return;
+    setDeleting(true);
+    try {
+      const { error } = await supabaseClient
+        .from("flowers")
+        .delete()
+        .eq("id", selectedFlower.id);
+
+      if (error) {
+        console.error("Supabase delete error:", error);
+        return;
+      }
+
+      setFlowers((prev) => prev.filter((f) => f.id !== selectedFlower.id));
+      setSelectedFlower(null);
+    } catch (err) {
+      console.error("Delete crashed:", err);
+    } finally {
+      setDeleting(false);
+    }
+  }
 
   return (
     <section className="px-4 sm:px-8 md:px-16 py-16 sm:py-24" style={{ backgroundColor: '#FAF9F6' }}>
