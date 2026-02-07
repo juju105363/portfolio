@@ -386,9 +386,18 @@
 
     if (clientX === null || clientY === null) return;
 
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-    if (y < 60) return;
+    let x = clientX - rect.left;
+    let y = clientY - rect.top;
+    
+    // Enforce boundaries to keep flowers visible
+    const flowerSize = 64; // 16 * 4 (w-16 h-16 in the component)
+    const margin = flowerSize / 2;
+    
+    // Constrain x within bounds
+    x = Math.max(margin, Math.min(x, rect.width - margin));
+    
+    // Constrain y within bounds (minimum 60px from top to keep above grass)
+    y = Math.max(60 + margin, Math.min(y, rect.height - margin));
 
     const flower = {
       id: Date.now() + "-" + Math.random().toString(36).substr(2, 9),
