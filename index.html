@@ -9,6 +9,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
    <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
    <style>
       @keyframes fall {
          0% {
@@ -89,19 +90,17 @@
       .tooltip-fade-out {
          animation: tooltipFadeOut 0.3s ease-out forwards;
       }
-   </style>
+   </style> 
 </head>
 
 <body>
    <div id="root"></div>
-   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
    <script type="text/babel">
       const { useState, useRef, useEffect, useMemo, createContext, useContext } = React;
-
+      // Supabase client (public anon key is safe to be in frontend)
       const SUPABASE_URL = "https://hnrhlujoetiadwrblshu.supabase.co";
       const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhucmhsdWpvZXRpYWR3cmJsc2h1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0MzQxMjMsImV4cCI6MjA4NjAxMDEyM30.rG46NpPKD2Vb_2AxYFHFe32Nh0rJ7HJEbBxcEq5jkhg";
-      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+      const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
       const TooltipContext = createContext({ showTouchTooltips: false, tooltipFading: false, tooltipPetalId: null, tooltipLeafId: null });
@@ -321,108 +320,227 @@
       }
 
       function GardenSection() {
-         const [flowers, setFlowers] = useState([]);
-         const [loading, setLoading] = useState(true);
-         const [showDrawing, setShowDrawing] = useState(false);
-         const [pendingDrawing, setPendingDrawing] = useState(null);
-         const [pendingMessage, setPendingMessage] = useState('');
-         const [selectedFlower, setSelectedFlower] = useState(null);
-         const gardenRef = useRef(null);
+  const [flowers, setFlowers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showDrawing, setShowDrawing] = useState(false);
+  const [pendingDrawing, setPendingDrawing] = useState(null);
+  const [pendingMessage, setPendingMessage] = useState('');
+  const [selectedFlower, setSelectedFlower] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+  const gardenRef = useRef(null);
 
-         useEffect(() => {
-  async function load() {
-    try {
-      const { data, error } = await supabase
-        .from("flowers")
-        .select("id,drawing,message,x,y,planted_at")
-        .order("planted_at", { ascending: false })
-        .limit(200);
+  // Load flowers from Supabase (shared across visitors)
+  useEffect(() => {
+    async function load() {
+      setLoading(true);
+      try {
+        const { data, error } = await supabaseClient
+          .from("flowers")
+          .select("*")
+          .order("planted_at", { ascending: false })
+          .limit(50);
 
-      if (!error && data) {
-        setFlowers(
-          data.map((r) => ({
-            id: r.id,
-            drawing: r.drawing,
-            message: r.message,
-            x: r.x,
-            y: r.y,
-            plantedAt: r.planted_at,
-          }))
-        );
+        if (error) {
+          console.error("Supabase load error:", error);
+          setFlowers([]);
+        } else {
+          const mapped = (data || []).map((row) => ({
+            id: row.id,
+            drawing: row.drawing,
+            message: row.message || "",
+            x: row.x,
+            y: row.y,
+            plantedAt: row.planted_at,
+          }));
+          setFlowers(mapped);
+        }
+      } catch (e) {
+        console.error("Load crashed:", e);
+        setFlowers([]);
+      } finally {
+        setLoading(false);
       }
-    } catch (e) {}
-    setLoading(false);
+    }
+    load();
+  }, []);
+
+  function handleSave(dataUrl, msg) {
+    setPendingDrawing(dataUrl);
+    setPendingMessage(msg);
+    setShowDrawing(false);
   }
-  load();
-}, []);
 
+  async function plantFlower(e) {
+    if (!gardenRef.current || !pendingDrawing) return;
 
-         function handleSave(dataUrl, msg) {
-            setPendingDrawing(dataUrl);
-            setPendingMessage(msg);
-            setShowDrawing(false);
-         }
+    const rect = gardenRef.current.getBoundingClientRect();
+    const clientX =
+      e.clientX !== undefined
+        ? e.clientX
+        : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : null);
+    const clientY =
+      e.clientY !== undefined
+        ? e.clientY
+        : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientY : null);
 
-         async function plantFlower(e) {
-            if (!gardenRef.current || !pendingDrawing) return;
-            const rect = gardenRef.current.getBoundingClientRect();
-            const clientX = e.clientX !== undefined ? e.clientX : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : null);
-            const clientY = e.clientY !== undefined ? e.clientY : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientY : null);
-            if (clientX === null) return;
-            const x = clientX - rect.left, y = clientY - rect.top;
-            if (y < 60) return;
-            const flower = {
-               id: Date.now() + '-' + Math.random().toString(36).substr(2, 9),
-               drawing: pendingDrawing,
-               message: pendingMessage,
-               x: x,
-               y: y,
-               plantedAt: new Date().toISOString()
-            };
-            try {
-               await supabase.from("flowers").insert([{
-               id: flower.id,
-               drawing: flower.drawing,
-               message: flower.message,
-               x: flower.x,
-               y: flower.y,
-               planted_at: new Date().toISOString(),
-            }]);
-            } catch (e) { }
-            setFlowers(function (prev) { return prev.concat([flower]); });
-            setPendingDrawing(null);
-            setPendingMessage('');
-         }
+    if (clientX === null || clientY === null) return;
 
-         return (
-            <section className="px-4 sm:px-8 md:px-16 py-16 sm:py-24" style={{ backgroundColor: '#FAF9F6' }}>
-               <div className="text-center mb-8">
-                  <h2 className="text-2xl md:text-3xl font-light text-stone-800 mb-2">Since you're still here...</h2>
-                  <p className="text-stone-400 text-sm">Leave a flower on my lawn 🌱</p>
-               </div>
-               <div ref={gardenRef} className="relative w-full h-96 rounded-2xl overflow-hidden border border-stone-200" style={{ backgroundColor: '#f9f6f1', cursor: pendingDrawing ? 'crosshair' : 'default' }} onClick={pendingDrawing ? plantFlower : undefined} onTouchEnd={pendingDrawing ? plantFlower : undefined}>
-                  <HandDrawnLawn />
-                  <button onClick={function () { setShowDrawing(true); }} className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white px-4 py-2 rounded-full shadow font-medium text-stone-600 transition-all hover:scale-105 border border-stone-200 text-sm">✏️ Draw a Flower</button>
-                  <div className="absolute top-4 left-4 z-20 bg-white/90 px-3 py-1 rounded-full text-sm text-stone-500 border border-stone-200">{flowers.length} flowers</div>
-                  {pendingDrawing && <div className="absolute top-16 left-1/2 -translate-x-1/2 bg-white/95 text-stone-600 px-4 py-2 rounded-full shadow text-sm border border-stone-200 z-20" style={{ animation: 'pulse 2s infinite' }}>Click anywhere to plant your flower!</div>}
-                  <div className="absolute inset-0" style={{ zIndex: 5 }}>
-                     {loading ? <div className="absolute inset-0 flex items-center justify-center"><div className="text-stone-400 text-sm">Loading garden...</div></div> : flowers.map(function (f) { return <PlantedFlower key={f.id} flower={f} onClick={setSelectedFlower} />; })}
-                  </div>
-               </div>
-               {showDrawing && <DrawingCanvas onSave={handleSave} onCancel={function () { setShowDrawing(false); }} />}
-               {selectedFlower && (
-                  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={function () { setSelectedFlower(null); }}>
-                     <div className="bg-stone-50 rounded-2xl p-6 max-w-xs w-full shadow-2xl text-center" onClick={function (e) { e.stopPropagation(); }}>
-                        <img src={selectedFlower.drawing} alt="flower" className="w-40 h-40 mx-auto object-contain" />
-                        {selectedFlower.message && <p className="mt-4 text-stone-600 italic text-lg">&quot;{selectedFlower.message}&quot;</p>}
-                        <p className="mt-3 text-xs text-stone-400">Planted {new Date(selectedFlower.plantedAt).toLocaleDateString()}</p>
-                        <button onClick={function () { setSelectedFlower(null); }} className="mt-4 px-4 py-2 bg-stone-200 rounded-lg text-stone-600 hover:bg-stone-300 text-sm">Close</button>
-                     </div>
-                  </div>
-               )}
-            </section>
-         );
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    if (y < 60) return;
+
+    const flower = {
+      id: Date.now() + "-" + Math.random().toString(36).substr(2, 9),
+      drawing: pendingDrawing,
+      message: pendingMessage,
+      x: x,
+      y: y,
+      plantedAt: new Date().toISOString(),
+    };
+
+    // Insert into Supabase
+    try {
+      const { error } = await supabaseClient.from("flowers").insert([
+        {
+          id: flower.id,
+          drawing: flower.drawing,
+          message: flower.message,
+          x: flower.x,
+          y: flower.y,
+          planted_at: flower.plantedAt,
+        },
+      ]);
+
+      if (error) {
+        console.error("Supabase insert error:", error);
+        return;
       }
+
+      // Update UI only if insert succeeded
+      setFlowers((prev) => [flower].concat(prev));
+      setPendingDrawing(null);
+      setPendingMessage("");
+    } catch (err) {
+      console.error("Insert crashed:", err);
+    }
+  }
+
+  async function deleteSelectedFlower() {
+    if (!selectedFlower) return;
+    setDeleting(true);
+    try {
+      const { error } = await supabaseClient
+        .from("flowers")
+        .delete()
+        .eq("id", selectedFlower.id);
+
+      if (error) {
+        console.error("Supabase delete error:", error);
+        return;
+      }
+
+      setFlowers((prev) => prev.filter((f) => f.id !== selectedFlower.id));
+      setSelectedFlower(null);
+    } catch (err) {
+      console.error("Delete crashed:", err);
+    } finally {
+      setDeleting(false);
+    }
+  }
+
+  return (
+    <section className="px-4 sm:px-8 md:px-16 py-16 sm:py-24" style={{ backgroundColor: '#FAF9F6' }}>
+      <div className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-light text-stone-800 mb-2">Since you're still here...</h2>
+        <p className="text-stone-400 text-sm">Leave a flower on my lawn 🌱</p>
+      </div>
+
+      <div
+        ref={gardenRef}
+        className="relative w-full h-96 rounded-2xl overflow-hidden border border-stone-200"
+        style={{ backgroundColor: '#f9f6f1', cursor: pendingDrawing ? 'crosshair' : 'default' }}
+        onClick={pendingDrawing ? plantFlower : undefined}
+        onTouchEnd={pendingDrawing ? plantFlower : undefined}
+      >
+        <HandDrawnLawn />
+
+        <button
+          onClick={function () { setShowDrawing(true); }}
+          className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white px-4 py-2 rounded-full shadow font-medium text-stone-600 transition-all hover:scale-105 border border-stone-200 text-sm"
+        >
+          ✏️ Draw a Flower
+        </button>
+
+        <div className="absolute top-4 left-4 z-20 bg-white/90 px-3 py-1 rounded-full text-sm text-stone-500 border border-stone-200">
+          {flowers.length} flowers
+        </div>
+
+        {pendingDrawing && (
+          <div
+            className="absolute top-16 left-1/2 -translate-x-1/2 bg-white/95 text-stone-600 px-4 py-2 rounded-full shadow text-sm border border-stone-200 z-20"
+            style={{ animation: 'pulse 2s infinite' }}
+          >
+            Click anywhere to plant your flower!
+          </div>
+        )}
+
+        <div className="absolute inset-0" style={{ zIndex: 5 }}>
+          {loading ? (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-stone-400 text-sm">Loading garden...</div>
+            </div>
+          ) : (
+            flowers.map(function (f) {
+              return <PlantedFlower key={f.id} flower={f} onClick={setSelectedFlower} />;
+            })
+          )}
+        </div>
+      </div>
+
+      {showDrawing && <DrawingCanvas onSave={handleSave} onCancel={function () { setShowDrawing(false); }} />}
+
+      {selectedFlower && (
+        <div
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          onClick={function () { setSelectedFlower(null); }}
+        >
+          <div
+            className="bg-stone-50 rounded-2xl p-6 max-w-xs w-full shadow-2xl text-center"
+            onClick={function (e) { e.stopPropagation(); }}
+          >
+            <img src={selectedFlower.drawing} alt="flower" className="w-40 h-40 mx-auto object-contain" />
+
+            {selectedFlower.message && (
+              <p className="mt-4 text-stone-600 italic text-lg">&quot;{selectedFlower.message}&quot;</p>
+            )}
+
+            <p className="mt-3 text-xs text-stone-400">
+              Planted {selectedFlower.plantedAt ? new Date(selectedFlower.plantedAt).toLocaleDateString() : ""}
+            </p>
+
+            <div className="mt-4 flex gap-2 justify-center">
+              <button
+                onClick={function () { setSelectedFlower(null); }}
+                className="px-4 py-2 bg-stone-200 rounded-lg text-stone-600 hover:bg-stone-300 text-sm"
+              >
+                Close
+              </button>
+
+              <button
+                onClick={deleteSelectedFlower}
+                disabled={deleting}
+                className={`px-4 py-2 rounded-lg text-sm text-white ${deleting ? "bg-red-300" : "bg-red-600 hover:bg-red-700"}`}
+              >
+                {deleting ? "Deleting..." : "Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 
       function App() {
          const [positions, setPositions] = useState({});
