@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contrast Warning</title>
+
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root{
+        --warn-border: #E9D27C;
+        --warn-bg: #FFF9E6;
+        --text: #111827;
+        --muted: #6B7280;
+        --chip-bg: #FFFFFF;
+        --chip-border: #E5E7EB;
+        --btn-bg: #111827;
+        --btn-text: #FFFFFF;
+        --btn-ghost-bg: #FFFFFF;
+        --btn-ghost-text: #111827;
+        --radius: 14px;
+      }
+
+      body{
+        margin: 0;
+        padding: 48px;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background: #FFFFFF;
+      }
+
+      .contrast-warning {
+        border: 2px solid var(--warn-border);
+        border-radius: var(--radius);
+        background: var(--warn-bg);
+        padding: 16px 18px;
+        max-width: 860px;
+      }
+
+      .cw-top{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .cw-title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .cw-sub{
+        margin: 6px 0 0 34px;
+        font-size: 14px;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      .cw-meta{
+        margin: 12px 0 0 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--chip-border);
+        background: var(--chip-bg);
+        font-size: 12px;
+        color: var(--text);
+      }
+
+      .swatch{
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,.12);
+      }
+
+      .cw-actions{
+        margin: 14px 0 0 34px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn{
+        border: 1px solid transparent;
+        border-radius: 10px;
+        padding: 9px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-ghost{
+        background: var(--btn-ghost-bg);
+        color: var(--btn-ghost-text);
+        border-color: var(--chip-border);
+      }
+
+      .btn-link{
+        background: transparent;
+        border: 0;
+        padding: 9px 6px;
+        color: var(--muted);
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .cw-close{
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        color: var(--muted);
+        padding: 6px;
+        border-radius: 10px;
+      }
+      .cw-close:focus-visible{ outline: 2px solid rgba(17,24,39,.25); outline-offset: 2px; }
+
+      .icon{
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="contrastWarning"
+      class="contrast-warning"
+      role="alert"
+      aria-live="polite"
+    >
+      <div class="cw-top">
+        <div>
+          <h3 class="cw-title">
+            <!-- warning icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3.2 22 20.5H2L12 3.2Z" stroke="#111827" stroke-width="1.6"/>
+              <path d="M12 9v5" stroke="#111827" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M12 17.7h.01" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            Low color contrast
+          </h3>
+
+          <p class="cw-sub">
+            This color pair is below the recommended minimum contrast ratio of <strong>4.5:1</strong> for normal text.
+            Consider adjusting the text or background color.
+          </p>
+
+          <div class="cw-meta">
+            <span class="chip">
+              Ratio: <strong id="cwRatio">2.9:1</strong>
+            </span>
+
+            <span class="chip">
+              <span class="swatch" id="cwTextSwatch" style="background:#9CA3AF"></span>
+              Text <span id="cwTextHex">#9CA3AF</span>
+            </span>
+
+            <span class="chip">
+              <span class="swatch" id="cwBgSwatch" style="background:#FFFFFF"></span>
+              Background <span id="cwBgHex">#FFFFFF</span>
+            </span>
+          </div>
+
+          <div class="cw-actions">
+            <button class="btn btn-ghost" type="button">Keep anyway</button>
+            <button class="btn-link" type="button">Learn about contrast</button>
+          </div>
+        </div>
+
+        <button class="cw-close" type="button" aria-label="Dismiss warning" onclick="dismissWarning()">
+          <!-- X icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7l10 10M17 7 7 17" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function dismissWarning(){
+        const el = document.getElementById("contrastWarning");
+        if (el) el.style.display = "none";
+      }
+
+      // Optional: set values dynamically
+      // setContrastWarning({ ratio: "3.2:1", textHex: "#7C3AED", bgHex: "#FFFFFF" });
+      function setContrastWarning({ ratio, textHex, bgHex }){
+        document.getElementById("cwRatio").textContent = ratio;
+        document.getElementById("cwTextHex").textContent = textHex;
+        document.getElementById("cwBgHex").textContent = bgHex;
+        document.getElementById("cwTextSwatch").style.background = textHex;
+        document.getElementById("cwBgSwatch").style.background = bgHex;
+      }
+    </script>
+  </body>
+</html>
